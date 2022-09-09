@@ -1,0 +1,920 @@
+ -->  InputReader -->  MyAIDAProcessor -->  EventNumber -->  InitDD4hep -->  Config -->  OverlayFalse -->  VXDBarrelDigitiser -->  PodioOutput 
+
+Option name: VertexFinder.OutputLevel VertexFinder.OutputLevel 4
+Option name: VertexFinder.ProcessorType VertexFinder.ProcessorType LcfiplusProcessor
+Option name: VertexFinder.Parameters VertexFinder.Parameters {'Algorithms': ['PrimaryVertexFinder', 'BuildUpVertex'], 'BeamSizeX': ['40.E-6'], 'BeamSizeY': ['1.0E-6'], 'BeamSizeZ': ['44E-3'], 'BuildUpVertex.AVFTemperature': ['5.0'], 'BuildUpVertex.AssocIPTracks': ['1'], 'BuildUpVertex.AssocIPTracksChi2RatioSecToPri': ['2.0'], 'BuildUpVertex.AssocIPTracksMinDist': ['0.'], 'BuildUpVertex.MassThreshold': ['10.'], 'BuildUpVertex.MaxChi2ForDistOrder': ['1.0'], 'BuildUpVertex.MinDistFromIP': ['0.3'], 'BuildUpVertex.PrimaryChi2Threshold': ['25.'], 'BuildUpVertex.SecondaryChi2Threshold': ['9.'], 'BuildUpVertex.TrackMaxD0': ['10.'], 'BuildUpVertex.TrackMaxD0Err': ['0.1'], 'BuildUpVertex.TrackMaxZ0': ['20.'], 'BuildUpVertex.TrackMaxZ0Err': ['0.1'], 'BuildUpVertex.TrackMinFtdHits': ['1'], 'BuildUpVertex.TrackMinPt': ['0.1'], 'BuildUpVertex.TrackMinTpcHits': ['1'], 'BuildUpVertex.TrackMinTpcHitsMinPt': ['999999'], 'BuildUpVertex.TrackMinVxdFtdHits': ['1'], 'BuildUpVertex.TrackMinVxdHits': ['1'], 'BuildUpVertex.UseAVF': ['false'], 'BuildUpVertex.UseV0Selection': ['1'], 'BuildUpVertex.V0VertexCollectionName': ['BuildUpVertices_V0'], 'BuildUpVertexCollectionName': ['BuildUpVertices'], 'MCPCollection': ['MCParticle'], 'MCPFORelation': ['RecoMCTruthLink'], 'MagneticField': ['4.0'], 'PFOCollection': ['PFOsFromJets'], 'PrimaryVertexCollectionName': ['PrimaryVertices'], 'PrimaryVertexFinder.BeamspotConstraint': ['1'], 'PrimaryVertexFinder.BeamspotSmearing': ['false'], 'PrimaryVertexFinder.Chi2Threshold': ['25.'], 'PrimaryVertexFinder.TrackMaxD0': ['20.'], 'PrimaryVertexFinder.TrackMaxInnermostHitRadius': ['61'], 'PrimaryVertexFinder.TrackMaxZ0': ['20.'], 'PrimaryVertexFinder.TrackMinFtdHits': ['999999'], 'PrimaryVertexFinder.TrackMinTpcHits': ['999999'], 'PrimaryVertexFinder.TrackMinTpcHitsMinPt': ['999999'], 'PrimaryVertexFinder.TrackMinVtxFtdHits': ['1'], 'PrimaryVertexFinder.TrackMinVxdHits': ['999999'], 'PrintEventNumber': ['1'], 'ReadSubdetectorEnergies': ['0'], 'TrackHitOrdering': ['2'], 'UpdateVertexRPDaughters': ['0'], 'UseMCP': ['0']}
+Option name: LumiCalReco.OutputLevel LumiCalReco.OutputLevel 2
+Option name: LumiCalReco.ProcessorType LumiCalReco.ProcessorType BeamCalClusterReco
+Option name: LumiCalReco.Parameters LumiCalReco.Parameters {'BackgroundMethod': ['Empty'], 'BeamCalCollectionName': ['LumiCalCollection'], 'BeamCalHitsOutCollection': ['LumiCal_Hits'], 'CreateEfficiencyFile': ['false'], 'DetectorName': ['LumiCal'], 'DetectorStartingLayerID': ['0'], 'ETCluster': ['0.2'], 'ETPad': ['20e-06'], 'EfficiencyFilename': ['TaggingEfficiency.root'], 'InputFileBackgrounds': [], 'LinearCalibrationFactor': ['82.377'], 'LogWeightingConstant': ['6.1'], 'MCParticleCollectionName': ['MCParticle'], 'MaxPadDistance': ['62'], 'MinimumTowerSize': ['4'], 'NShowerCountingLayers': ['30'], 'NumberOfBX': ['0'], 'PrintThisEvent': ['-1'], 'RecoClusterCollectionname': ['LumiCalClusters'], 'RecoParticleCollectionname': ['LumiCalRecoParticles'], 'SigmaCut': ['1'], 'StartLookingInLayer': ['1'], 'StartingRing': ['0.0'], 'SubClusterEnergyID': ['3'], 'TowerChi2ndfLimit': ['5'], 'UseChi2Selection': ['false'], 'UseConstPadCuts': ['false']}
+Option name: MyConformalTracking.OutputLevel MyConformalTracking.OutputLevel 4
+Option name: MyConformalTracking.ProcessorType MyConformalTracking.ProcessorType ConformalTrackingV2
+Option name: MyConformalTracking.Parameters MyConformalTracking.Parameters {'DebugHits': ['DebugHits'], 'DebugPlots': ['false'], 'DebugTiming': ['false'], 'MCParticleCollectionName': ['MCParticle'], 'MaxHitInvertedFit': ['0'], 'MinClustersOnTrackAfterFit': ['3'], 'RelationsNames': ['VXDTrackerHitRelations', 'VXDEndcapTrackerHitRelations', 'InnerTrackerBarrelHitsRelations', 'OuterTrackerBarrelHitsRelations', 'InnerTrackerEndcapHitsRelations', 'OuterTrackerEndcapHitsRelations'], 'RetryTooManyTracks': ['false'], 'SiTrackCollectionName': ['SiTracksCT'], 'SortTreeResults': ['true'], 'Steps': ['[VXDBarrel]', '@Collections', ':', 'VXDTrackerHits', '@Parameters', ':', 'MaxCellAngle', ':', '0.005;', 'MaxCellAngleRZ', ':', '0.005;', 'Chi2Cut', ':', '100;', 'MinClustersOnTrack', ':', '4;', 'MaxDistance', ':', '0.02;', 'SlopeZRange:', '10.0;', 'HighPTCut:', '10.0;', '@Flags', ':', 'HighPTFit,', 'VertexToTracker', '@Functions', ':', 'CombineCollections,', 'BuildNewTracks', '[VXDEncap]', '@Collections', ':', 'VXDEndcapTrackerHits', '@Parameters', ':', 'MaxCellAngle', ':', '0.005;', 'MaxCellAngleRZ', ':', '0.005;', 'Chi2Cut', ':', '100;', 'MinClustersOnTrack', ':', '4;', 'MaxDistance', ':', '0.02;', 'SlopeZRange:', '10.0;', 'HighPTCut:', '0.0;', '@Flags', ':', 'HighPTFit,', 'VertexToTracker', '@Functions', ':', 'CombineCollections,', 'ExtendTracks', '[LowerCellAngle1]', '@Collections', ':', 'VXDTrackerHits,', 'VXDEndcapTrackerHits', '@Parameters', ':', 'MaxCellAngle', ':', '0.025;', 'MaxCellAngleRZ', ':', '0.025;', 'Chi2Cut', ':', '100;', 'MinClustersOnTrack', ':', '4;', 'MaxDistance', ':', '0.02;', 'SlopeZRange:', '10.0;', 'HighPTCut:', '10.0;', '@Flags', ':', 'HighPTFit,', 'VertexToTracker,', 'RadialSearch', '@Functions', ':', 'CombineCollections,', 'BuildNewTracks', '[LowerCellAngle2]', '@Collections', ':', '@Parameters', ':', 'MaxCellAngle', ':', '0.05;', 'MaxCellAngleRZ', ':', '0.05;', 'Chi2Cut', ':', '2000;', 'MinClustersOnTrack', ':', '4;', 'MaxDistance', ':', '0.02;', 'SlopeZRange:', '10.0;', 'HighPTCut:', '10.0;', '@Flags', ':', 'HighPTFit,', 'VertexToTracker,', 'RadialSearch', '@Functions', ':', 'BuildNewTracks,', 'SortTracks', '[Tracker]', '@Collections', ':', 'ITrackerHits,', 'OTrackerHits,', 'ITrackerEndcapHits,', 'OTrackerEndcapHits', '@Parameters', ':', 'MaxCellAngle', ':', '0.05;', 'MaxCellAngleRZ', ':', '0.05;', 'Chi2Cut', ':', '2000;', 'MinClustersOnTrack', ':', '4;', 'MaxDistance', ':', '0.02;', 'SlopeZRange:', '10.0;', 'HighPTCut:', '0.0;', '@Flags', ':', 'HighPTFit,', 'VertexToTracker,', 'RadialSearch', '@Functions', ':', 'CombineCollections,', 'ExtendTracks', '[Displaced]', '@Collections', ':', 'VXDTrackerHits,', 'VXDEndcapTrackerHits,', 'ITrackerHits,', 'OTrackerHits,', 'ITrackerEndcapHits,', 'OTrackerEndcapHits', '@Parameters', ':', 'MaxCellAngle', ':', '0.05;', 'MaxCellAngleRZ', ':', '0.05;', 'Chi2Cut', ':', '1000;', 'MinClustersOnTrack', ':', '5;', 'MaxDistance', ':', '0.015;', 'SlopeZRange:', '10.0;', 'HighPTCut:', '10.0;', '@Flags', ':', 'OnlyZSchi2cut,', 'RadialSearch', '@Functions', ':', 'CombineCollections,', 'BuildNewTracks'], 'ThetaRange': ['0.05'], 'TooManyTracks': ['100000'], 'TrackerHitCollectionNames': ['VXDTrackerHits', 'VXDEndcapTrackerHits', 'ITrackerHits', 'OTrackerHits', 'ITrackerEndcapHits', 'OTrackerEndcapHits'], 'trackPurity': ['0.7']}
+Option name: BeamCalReco380GeV.OutputLevel BeamCalReco380GeV.OutputLevel 4
+Option name: BeamCalReco380GeV.ProcessorType BeamCalReco380GeV.ProcessorType BeamCalClusterReco
+Option name: BeamCalReco380GeV.Parameters BeamCalReco380GeV.Parameters {'BackgroundMethod': ['Gaussian'], 'BeamCalCollectionName': ['BeamCalCollection'], 'CreateEfficiencyFile': ['false'], 'DetectorName': ['BeamCal'], 'DetectorStartingLayerID': ['1'], 'ETCluster': ['1.0'], 'ETPad': ['0.01'], 'EfficiencyFilename': ['TaggingEfficiency.root'], 'InputFileBackgrounds': ['BeamCal_BackgroundPars_380GeV.root'], 'LinearCalibrationFactor': ['116.44'], 'MCParticleCollectionName': ['MCParticle'], 'MinimumTowerSize': ['4'], 'NShowerCountingLayers': ['3'], 'NumberOfBX': ['40'], 'PrintThisEvent': ['-1'], 'RecoClusterCollectionname': ['BeamCalClusters'], 'RecoParticleCollectionname': ['BeamCalRecoParticles'], 'SigmaCut': ['1'], 'StartLookingInLayer': ['2'], 'StartingRing': ['0.0'], 'SubClusterEnergyID': ['5'], 'TowerChi2ndfLimit': ['5'], 'UseChi2Selection': ['false'], 'UseConstPadCuts': ['false']}
+Option name: MyFastJetProcessor.OutputLevel MyFastJetProcessor.OutputLevel 4
+Option name: MyFastJetProcessor.ProcessorType MyFastJetProcessor.ProcessorType FastJetProcessor
+Option name: MyFastJetProcessor.Parameters MyFastJetProcessor.Parameters {'algorithm': ['ValenciaPlugin', '1.2', '1.0', '0.7'], 'clusteringMode': ['ExclusiveNJets', '2'], 'jetOut': ['JetsAfterGamGamRemoval'], 'recParticleIn': ['TightSelectedPandoraPFOs'], 'recParticleOut': ['PFOsFromJets'], 'recombinationScheme': ['E_scheme'], 'storeParticlesInJets': ['true']}
+Option name: MyDDMarlinPandora.OutputLevel MyDDMarlinPandora.OutputLevel 4
+Option name: MyDDMarlinPandora.ProcessorType MyDDMarlinPandora.ProcessorType DDPandoraPFANewProcessor
+Option name: MyDDMarlinPandora.Parameters MyDDMarlinPandora.Parameters {'ClusterCollectionName': ['PandoraClusters'], 'CreateGaps': ['false'], 'CurvatureToMomentumFactor': ['0.00015'], 'D0TrackCut': ['200'], 'D0UnmatchedVertexTrackCut': ['5'], 'DigitalMuonHits': ['0'], 'ECalBarrelNormalVector': ['0', '0', '1'], 'ECalCaloHitCollections': ['ECALBarrel', 'ECALEndcap', 'ECALOther'], 'ECalMipThreshold': ['0.5'], 'ECalScMipThreshold': ['0'], 'ECalScToEMGeVCalibration': ['1'], 'ECalScToHadGeVCalibrationBarrel': ['1'], 'ECalScToHadGeVCalibrationEndCap': ['1'], 'ECalScToMipCalibration': ['1'], 'ECalSiMipThreshold': ['0'], 'ECalSiToEMGeVCalibration': ['1'], 'ECalSiToHadGeVCalibrationBarrel': ['1'], 'ECalSiToHadGeVCalibrationEndCap': ['1'], 'ECalSiToMipCalibration': ['1'], 'ECalToEMGeVCalibration': ['1.02373335516'], 'ECalToHadGeVCalibrationBarrel': ['1.24223718397'], 'ECalToHadGeVCalibrationEndCap': ['1.24223718397'], 'ECalToMipCalibration': ['181.818'], 'EMConstantTerm': ['0.01'], 'EMStochasticTerm': ['0.17'], 'FinalEnergyDensityBin': ['110.'], 'HCalBarrelNormalVector': ['0', '0', '1'], 'HCalCaloHitCollections': ['HCALBarrel', 'HCALEndcap', 'HCALOther'], 'HCalMipThreshold': ['0.3'], 'HCalToEMGeVCalibration': ['1.02373335516'], 'HCalToHadGeVCalibration': ['1.01799349172'], 'HCalToMipCalibration': ['40.8163'], 'HadConstantTerm': ['0.03'], 'HadStochasticTerm': ['0.6'], 'InputEnergyCorrectionPoints': [], 'KinkVertexCollections': ['KinkVertices'], 'LCalCaloHitCollections': [], 'LHCalCaloHitCollections': [], 'LayersFromEdgeMaxRearDistance': ['250'], 'MCParticleCollections': ['MCParticle'], 'MaxBarrelTrackerInnerRDistance': ['200'], 'MaxClusterEnergyToApplySoftComp': ['2000.'], 'MaxHCalHitHadronicEnergy': ['1000000'], 'MaxTrackHits': ['5000'], 'MaxTrackSigmaPOverP': ['0.15'], 'MinBarrelTrackerHitFractionOfExpected': ['0'], 'MinCleanCorrectedHitEnergy': ['0.1'], 'MinCleanHitEnergy': ['0.5'], 'MinCleanHitEnergyFraction': ['0.01'], 'MinFtdHitsForBarrelTrackerHitFraction': ['0'], 'MinFtdTrackHits': ['0'], 'MinMomentumForTrackHitChecks': ['0'], 'MinTpcHitFractionOfExpected': ['0'], 'MinTrackECalDistanceFromIp': ['0'], 'MinTrackHits': ['0'], 'MuonBarrelBField': ['-1.5'], 'MuonCaloHitCollections': ['MUON'], 'MuonEndCapBField': ['0.01'], 'MuonHitEnergy': ['0.5'], 'MuonToMipCalibration': ['19607.8'], 'NEventsToSkip': ['0'], 'NOuterSamplingLayers': ['3'], 'OutputEnergyCorrectionPoints': [], 'PFOCollectionName': ['PandoraPFOs'], 'PandoraSettingsXmlFile': ['PandoraSettings/PandoraSettingsDefault.xml'], 'ProngVertexCollections': ['ProngVertices'], 'ReachesECalBarrelTrackerOuterDistance': ['-100'], 'ReachesECalBarrelTrackerZMaxDistance': ['-50'], 'ReachesECalFtdZMaxDistance': ['1'], 'ReachesECalMinFtdLayer': ['0'], 'ReachesECalNBarrelTrackerHits': ['0'], 'ReachesECalNFtdHits': ['0'], 'RelCaloHitCollections': ['RelationCaloHit', 'RelationMuonHit'], 'RelTrackCollections': ['SiTracks_Refitted_Relation'], 'ShouldFormTrackRelationships': ['1'], 'SoftwareCompensationEnergyDensityBins': ['0', '2.', '5.', '7.5', '9.5', '13.', '16.', '20.', '23.5', '28.', '33.', '40.', '50.', '75.', '100.'], 'SoftwareCompensationWeights': ['1.61741', '-0.00444385', '2.29683e-05', '-0.0731236', '-0.00157099', '-7.09546e-07', '0.868443', '1.0561', '-0.0238574'], 'SplitVertexCollections': ['SplitVertices'], 'StartVertexAlgorithmName': ['PandoraPFANew'], 'StartVertexCollectionName': ['PandoraStartVertices'], 'StripSplittingOn': ['0'], 'TrackCollections': ['SiTracks_Refitted'], 'TrackCreatorName': ['DDTrackCreatorCLIC'], 'TrackStateTolerance': ['0'], 'TrackSystemName': ['DDKalTest'], 'UnmatchedVertexTrackMaxEnergy': ['5'], 'UseEcalScLayers': ['0'], 'UseNonVertexTracks': ['1'], 'UseOldTrackStateCalculation': ['0'], 'UseUnmatchedNonVertexTracks': ['0'], 'UseUnmatchedVertexTracks': ['1'], 'V0VertexCollections': ['V0Vertices'], 'YokeBarrelNormalVector': ['0', '0', '1'], 'Z0TrackCut': ['200'], 'Z0UnmatchedVertexTrackCut': ['5'], 'ZCutForNonVertexTracks': ['250']}
+Option name: Overlay1.4TeV.OutputLevel Overlay1.4TeV.OutputLevel 4
+Option name: Overlay1.4TeV.ProcessorType Overlay1.4TeV.ProcessorType OverlayTimingGeneric
+Option name: Overlay1.4TeV.Parameters Overlay1.4TeV.Parameters {'BackgroundFileNames': ['gghad_01.slcio', 'gghad_02.slcio'], 'Collection_IntegrationTimes': ['VertexBarrelCollection', '10', 'VertexEndcapCollection', '10', 'InnerTrackerBarrelCollection', '10', 'InnerTrackerEndcapCollection', '10', 'OuterTrackerBarrelCollection', '10', 'OuterTrackerEndcapCollection', '10', 'ECalBarrelCollection', '10', 'ECalEndcapCollection', '10', 'ECalPlugCollection', '10', 'HCalBarrelCollection', '10', 'HCalEndcapCollection', '10', 'HCalRingCollection', '10', 'YokeBarrelCollection', '10', 'YokeEndcapCollection', '10', 'LumiCalCollection', '10', 'BeamCalCollection', '10'], 'Delta_t': ['0.5'], 'MCParticleCollectionName': ['MCParticle'], 'MCPhysicsParticleCollectionName': ['MCPhysicsParticles'], 'NBunchtrain': ['30'], 'NumberBackground': ['1.3'], 'PhysicsBX': ['10'], 'Poisson_random_NOverlay': ['true'], 'RandomBx': ['false'], 'TPCDriftvelocity': ['0.05']}
+Option name: Overlay420GeV.OutputLevel Overlay420GeV.OutputLevel 4
+Option name: Overlay420GeV.ProcessorType Overlay420GeV.ProcessorType OverlayTimingGeneric
+Option name: Overlay420GeV.Parameters Overlay420GeV.Parameters {'BackgroundFileNames': ['gghad_01.slcio', 'gghad_02.slcio'], 'Collection_IntegrationTimes': ['VertexBarrelCollection', '10', 'VertexEndcapCollection', '10', 'InnerTrackerBarrelCollection', '10', 'InnerTrackerEndcapCollection', '10', 'OuterTrackerBarrelCollection', '10', 'OuterTrackerEndcapCollection', '10', 'ECalBarrelCollection', '10', 'ECalEndcapCollection', '10', 'ECalPlugCollection', '10', 'HCalBarrelCollection', '10', 'HCalEndcapCollection', '10', 'HCalRingCollection', '10', 'YokeBarrelCollection', '10', 'YokeEndcapCollection', '10', 'LumiCalCollection', '10', 'BeamCalCollection', '10'], 'Delta_t': ['0.5'], 'MCParticleCollectionName': ['MCParticle'], 'MCPhysicsParticleCollectionName': ['MCPhysicsParticles'], 'NBunchtrain': ['30'], 'NumberBackground': ['0.17'], 'PhysicsBX': ['10'], 'Poisson_random_NOverlay': ['true'], 'RandomBx': ['false'], 'TPCDriftvelocity': ['0.05']}
+Option name: Overlay380GeV.OutputLevel Overlay380GeV.OutputLevel 4
+Option name: Overlay380GeV.ProcessorType Overlay380GeV.ProcessorType OverlayTimingGeneric
+Option name: Overlay380GeV.Parameters Overlay380GeV.Parameters {'BackgroundFileNames': ['gghad_01.slcio', 'gghad_02.slcio'], 'Collection_IntegrationTimes': ['VertexBarrelCollection', '10', 'VertexEndcapCollection', '10', 'InnerTrackerBarrelCollection', '10', 'InnerTrackerEndcapCollection', '10', 'OuterTrackerBarrelCollection', '10', 'OuterTrackerEndcapCollection', '10', 'ECalBarrelCollection', '10', 'ECalEndcapCollection', '10', 'ECalPlugCollection', '10', 'HCalBarrelCollection', '10', 'HCalEndcapCollection', '10', 'HCalRingCollection', '10', 'YokeBarrelCollection', '10', 'YokeEndcapCollection', '10', 'LumiCalCollection', '10', 'BeamCalCollection', '10'], 'Delta_t': ['0.5'], 'MCParticleCollectionName': ['MCParticle'], 'MCPhysicsParticleCollectionName': ['MCPhysicsParticles'], 'NBunchtrain': ['30'], 'NumberBackground': ['0.18'], 'PhysicsBX': ['10'], 'Poisson_random_NOverlay': ['true'], 'RandomBx': ['false'], 'TPCDriftvelocity': ['0.05']}
+Option name: JetClusteringAndRefiner.OutputLevel JetClusteringAndRefiner.OutputLevel 4
+Option name: JetClusteringAndRefiner.ProcessorType JetClusteringAndRefiner.ProcessorType LcfiplusProcessor
+Option name: JetClusteringAndRefiner.Parameters JetClusteringAndRefiner.Parameters {'Algorithms': ['JetClustering', 'JetVertexRefiner'], 'JetClustering.AlphaParameter': ['1.0'], 'JetClustering.BetaParameter': ['1.0'], 'JetClustering.GammaParameter': ['1.0'], 'JetClustering.InputVertexCollectionName': ['BuildUpVertices'], 'JetClustering.JetAlgorithm': ['ValenciaVertex'], 'JetClustering.MaxNumberOfJetsForYThreshold': ['10'], 'JetClustering.MuonIDExternal': ['0'], 'JetClustering.MuonIDMaximum3DImpactParameter': ['5.0'], 'JetClustering.MuonIDMinimumD0Significance': ['5.0'], 'JetClustering.MuonIDMinimumEnergy': ['0'], 'JetClustering.MuonIDMinimumProbability': ['0.5'], 'JetClustering.MuonIDMinimumZ0Significance': ['5.0'], 'JetClustering.NJetsRequested': ['2'], 'JetClustering.OutputJetCollectionName': ['VertexJets'], 'JetClustering.OutputJetStoresVertex': ['0'], 'JetClustering.PrimaryVertexCollectionName': ['PrimaryVertices'], 'JetClustering.RParameter': ['1.0'], 'JetClustering.UseBeamJets': ['1'], 'JetClustering.UseMuonID': ['1'], 'JetClustering.VertexSelectionK0MassWidth': ['0.02'], 'JetClustering.VertexSelectionMaximumDistance': ['30.'], 'JetClustering.VertexSelectionMinimumDistance': ['0.3'], 'JetClustering.YAddedForJetLeptonLepton': ['100'], 'JetClustering.YAddedForJetLeptonVertex': ['100'], 'JetClustering.YAddedForJetVertexLepton': ['0'], 'JetClustering.YAddedForJetVertexVertex': ['100'], 'JetClustering.YCut': ['0.'], 'JetVertexRefiner.BNessCut': ['-0.80'], 'JetVertexRefiner.BNessCutE1': ['-0.15'], 'JetVertexRefiner.InputJetCollectionName': ['VertexJets'], 'JetVertexRefiner.InputVertexCollectionName': ['BuildUpVertices'], 'JetVertexRefiner.MaxAngleSingle': ['0.5'], 'JetVertexRefiner.MaxCharmFlightLengthPerJetEnergy': ['0.1'], 'JetVertexRefiner.MaxPosSingle': ['30.'], 'JetVertexRefiner.MaxSeparationPerPosSingle': ['0.1'], 'JetVertexRefiner.MinEnergySingle': ['1.'], 'JetVertexRefiner.MinPosSingle': ['0.3'], 'JetVertexRefiner.OneVertexProbThreshold': ['0.001'], 'JetVertexRefiner.OutputJetCollectionName': ['RefinedVertexJets'], 'JetVertexRefiner.OutputVertexCollectionName': ['RefinedVertices'], 'JetVertexRefiner.PrimaryVertexCollectionName': ['PrimaryVertices'], 'JetVertexRefiner.V0VertexCollectionName': ['BuildUpVertices_V0'], 'JetVertexRefiner.mind0sigSingle': ['5.'], 'JetVertexRefiner.minz0sigSingle': ['5.'], 'JetVertexRefiner.useBNess': ['0'], 'MCPCollection': ['MCParticle'], 'MCPFORelation': ['RecoMCTruthLink'], 'MagneticField': ['4.0'], 'PFOCollection': ['PFOsFromJets'], 'PrintEventNumber': ['1'], 'ReadSubdetectorEnergies': ['0'], 'TrackHitOrdering': ['2'], 'UpdateVertexRPDaughters': ['0'], 'UseMCP': ['0']}
+Option name: Config.OutputLevel Config.OutputLevel 4
+Option name: Config.ProcessorType Config.ProcessorType CLICRecoConfig
+Option name: Config.Parameters Config.Parameters {'BeamCal': ['3TeV'], 'BeamCalChoices': ['3TeV', '380GeV'], 'Overlay': ['False'], 'OverlayChoices': ['False', '350GeV_CDR', '350GeV', '350GeV_L6', '380GeV', '380GeV_CDR', '380GeV_L6', '420GeV', '500GeV', '1.4TeV', '3TeV', '3TeV_L6'], 'Tracking': ['Conformal'], 'TrackingChoices': ['Truth', 'Conformal'], 'VertexUnconstrained': ['OFF'], 'VertexUnconstrainedChoices': ['ON', 'OFF']}
+Option name: CLICPfoSelectorTight_HE.OutputLevel CLICPfoSelectorTight_HE.OutputLevel 4
+Option name: CLICPfoSelectorTight_HE.ProcessorType CLICPfoSelectorTight_HE.ProcessorType CLICPfoSelector
+Option name: CLICPfoSelectorTight_HE.Parameters CLICPfoSelectorTight_HE.Parameters {'ChargedPfoLooseTimingCut': ['2.0'], 'ChargedPfoNegativeLooseTimingCut': ['-0.5'], 'ChargedPfoNegativeTightTimingCut': ['-0.25'], 'ChargedPfoPtCut': ['0'], 'ChargedPfoPtCutForLooseTiming': ['4'], 'ChargedPfoTightTimingCut': ['1.0'], 'CheckKaonCorrection': ['0'], 'CheckProtonCorrection': ['0'], 'ClusterLessPfoTrackTimeCut': ['10'], 'CorrectHitTimesForTimeOfFlight': ['0'], 'DisplayRejectedPfos': ['1'], 'DisplaySelectedPfos': ['1'], 'FarForwardCosTheta': ['0.95'], 'ForwardCosThetaForHighEnergyNeutralHadrons': ['0.95'], 'ForwardHighEnergyNeutralHadronsEnergy': ['10'], 'HCalBarrelLooseTimingCut': ['20'], 'HCalBarrelTightTimingCut': ['10'], 'HCalEndCapTimingFactor': ['1'], 'InputPfoCollection': ['PandoraPFOs'], 'KeepKShorts': ['1'], 'MaxMomentumForClusterLessPfos': ['1.5'], 'MinECalHitsForTiming': ['5'], 'MinHCalEndCapHitsForTiming': ['5'], 'MinMomentumForClusterLessPfos': ['0.5'], 'MinPtForClusterLessPfos': ['1.0'], 'MinimumEnergyForNeutronTiming': ['1'], 'Monitoring': ['0'], 'MonitoringPfoEnergyToDisplay': ['1'], 'NeutralFarForwardLooseTimingCut': ['1.5'], 'NeutralFarForwardTightTimingCut': ['1'], 'NeutralHadronBarrelPtCutForLooseTiming': ['3.5'], 'NeutralHadronLooseTimingCut': ['2.5'], 'NeutralHadronPtCut': ['0.5'], 'NeutralHadronPtCutForLooseTiming': ['8'], 'NeutralHadronTightTimingCut': ['1.5'], 'PhotonFarForwardLooseTimingCut': ['2'], 'PhotonFarForwardTightTimingCut': ['1'], 'PhotonLooseTimingCut': ['2'], 'PhotonPtCut': ['0.2'], 'PhotonPtCutForLooseTiming': ['4'], 'PhotonTightTimingCut': ['1'], 'PtCutForTightTiming': ['1.0'], 'SelectedPfoCollection': ['TightSelectedPandoraPFOs'], 'UseClusterLessPfos': ['0'], 'UseNeutronTiming': ['0']}
+Option name: Overlay350GeV_CDR.OutputLevel Overlay350GeV_CDR.OutputLevel 4
+Option name: Overlay350GeV_CDR.ProcessorType Overlay350GeV_CDR.ProcessorType OverlayTimingGeneric
+Option name: Overlay350GeV_CDR.Parameters Overlay350GeV_CDR.Parameters {'BackgroundFileNames': ['gghad_01.slcio', 'gghad_02.slcio'], 'Collection_IntegrationTimes': ['VertexBarrelCollection', '10', 'VertexEndcapCollection', '10', 'InnerTrackerBarrelCollection', '10', 'InnerTrackerEndcapCollection', '10', 'OuterTrackerBarrelCollection', '10', 'OuterTrackerEndcapCollection', '10', 'ECalBarrelCollection', '10', 'ECalEndcapCollection', '10', 'ECalPlugCollection', '10', 'HCalBarrelCollection', '10', 'HCalEndcapCollection', '10', 'HCalRingCollection', '10', 'YokeBarrelCollection', '10', 'YokeEndcapCollection', '10', 'LumiCalCollection', '10', 'BeamCalCollection', '10'], 'Delta_t': ['0.5'], 'MCParticleCollectionName': ['MCParticle'], 'MCPhysicsParticleCollectionName': ['MCPhysicsParticles'], 'NBunchtrain': ['30'], 'NumberBackground': ['0.0464'], 'PhysicsBX': ['10'], 'Poisson_random_NOverlay': ['true'], 'RandomBx': ['false'], 'TPCDriftvelocity': ['0.05']}
+Option name: Output_REC.OutputLevel Output_REC.OutputLevel 4
+Option name: Output_REC.ProcessorType Output_REC.ProcessorType LCIOOutputProcessor
+Option name: Output_REC.Parameters Output_REC.Parameters {'DropCollectionNames': [], 'DropCollectionTypes': [], 'FullSubsetCollections': ['EfficientMCParticles', 'InefficientMCParticles'], 'KeepCollectionNames': [], 'LCIOOutputFile': ['Output_REC.slcio'], 'LCIOWriteMode': ['WRITE_NEW']}
+Option name: InnerEndcapPlanarDigiProcessor.OutputLevel InnerEndcapPlanarDigiProcessor.OutputLevel 4
+Option name: InnerEndcapPlanarDigiProcessor.ProcessorType InnerEndcapPlanarDigiProcessor.ProcessorType DDPlanarDigiProcessor
+Option name: InnerEndcapPlanarDigiProcessor.Parameters InnerEndcapPlanarDigiProcessor.Parameters {'IsStrip': ['false'], 'ResolutionU': ['0.005', '0.007', '0.007', '0.007', '0.007', '0.007', '0.007'], 'ResolutionV': ['0.005', '0.09', '0.09', '0.09', '0.09', '0.09', '0.09'], 'SimTrackHitCollectionName': ['InnerTrackerEndcapCollection'], 'SimTrkHitRelCollection': ['InnerTrackerEndcapHitsRelations'], 'SubDetectorName': ['InnerTrackers'], 'TrackerHitCollectionName': ['ITrackerEndcapHits']}
+Option name: MyRecoMCTruthLinker.OutputLevel MyRecoMCTruthLinker.OutputLevel 4
+Option name: MyRecoMCTruthLinker.ProcessorType MyRecoMCTruthLinker.ProcessorType RecoMCTruthLinker
+Option name: MyRecoMCTruthLinker.Parameters MyRecoMCTruthLinker.Parameters {'BremsstrahlungEnergyCut': ['1'], 'CalohitMCTruthLinkName': ['CalohitMCTruthLink'], 'ClusterCollection': ['MergedClusters'], 'ClusterMCTruthLinkName': ['ClusterMCTruthLink'], 'FullRecoRelation': ['false'], 'InvertedNonDestructiveInteractionLogic': ['false'], 'KeepDaughtersPDG': ['22', '111', '310', '13', '211', '321', '3120'], 'MCParticleCollection': ['MCPhysicsParticles'], 'MCParticlesSkimmedName': ['MCParticlesSkimmed'], 'MCTruthClusterLinkName': [], 'MCTruthRecoLinkName': [], 'MCTruthTrackLinkName': [], 'RecoMCTruthLinkName': ['RecoMCTruthLink'], 'RecoParticleCollection': ['MergedRecoParticles'], 'SaveBremsstrahlungPhotons': ['false'], 'SimCaloHitCollections': ['ECalBarrelCollection', 'ECalEndcapCollection', 'ECalPlugCollection', 'HCalBarrelCollection', 'HCalEndcapCollection', 'HCalRingCollection', 'YokeBarrelCollection', 'YokeEndcapCollection', 'LumiCalCollection', 'BeamCalCollection'], 'SimCalorimeterHitRelationNames': ['RelationCaloHit', 'RelationMuonHit'], 'SimTrackerHitCollections': ['VertexBarrelCollection', 'VertexEndcapCollection', 'InnerTrackerBarrelCollection', 'OuterTrackerBarrelCollection', 'InnerTrackerEndcapCollection', 'OuterTrackerEndcapCollection'], 'TrackCollection': ['SiTracks_Refitted'], 'TrackMCTruthLinkName': ['SiTracksMCTruthLink'], 'TrackerHitsRelInputCollections': ['VXDTrackerHitRelations', 'VXDEndcapTrackerHitRelations', 'InnerTrackerBarrelHitsRelations', 'OuterTrackerBarrelHitsRelations', 'InnerTrackerEndcapHitsRelations', 'OuterTrackerEndcapHitsRelations'], 'UseTrackerHitRelations': ['true'], 'UsingParticleGun': ['false'], 'daughtersECutMeV': ['10']}
+Option name: Overlay350GeV_L6.OutputLevel Overlay350GeV_L6.OutputLevel 4
+Option name: Overlay350GeV_L6.ProcessorType Overlay350GeV_L6.ProcessorType OverlayTimingGeneric
+Option name: Overlay350GeV_L6.Parameters Overlay350GeV_L6.Parameters {'BackgroundFileNames': ['gghad_01.slcio', 'gghad_02.slcio'], 'Collection_IntegrationTimes': ['VertexBarrelCollection', '10', 'VertexEndcapCollection', '10', 'InnerTrackerBarrelCollection', '10', 'InnerTrackerEndcapCollection', '10', 'OuterTrackerBarrelCollection', '10', 'OuterTrackerEndcapCollection', '10', 'ECalBarrelCollection', '10', 'ECalEndcapCollection', '10', 'ECalPlugCollection', '10', 'HCalBarrelCollection', '10', 'HCalEndcapCollection', '10', 'HCalRingCollection', '10', 'YokeBarrelCollection', '10', 'YokeEndcapCollection', '10', 'LumiCalCollection', '10', 'BeamCalCollection', '10'], 'Delta_t': ['0.5'], 'MCParticleCollectionName': ['MCParticle'], 'MCPhysicsParticleCollectionName': ['MCPhysicsParticles'], 'NBunchtrain': ['30'], 'NumberBackground': ['0.14'], 'PhysicsBX': ['10'], 'Poisson_random_NOverlay': ['true'], 'RandomBx': ['false'], 'TPCDriftvelocity': ['0.05']}
+Option name: Overlay3TeV.OutputLevel Overlay3TeV.OutputLevel 4
+Option name: Overlay3TeV.ProcessorType Overlay3TeV.ProcessorType OverlayTimingGeneric
+Option name: Overlay3TeV.Parameters Overlay3TeV.Parameters {'BackgroundFileNames': ['gghad_01.slcio', 'gghad_02.slcio'], 'Collection_IntegrationTimes': ['VertexBarrelCollection', '10', 'VertexEndcapCollection', '10', 'InnerTrackerBarrelCollection', '10', 'InnerTrackerEndcapCollection', '10', 'OuterTrackerBarrelCollection', '10', 'OuterTrackerEndcapCollection', '10', 'ECalBarrelCollection', '10', 'ECalEndcapCollection', '10', 'ECalPlugCollection', '10', 'HCalBarrelCollection', '10', 'HCalEndcapCollection', '10', 'HCalRingCollection', '10', 'YokeBarrelCollection', '10', 'YokeEndcapCollection', '10', 'LumiCalCollection', '10', 'BeamCalCollection', '10'], 'Delta_t': ['0.5'], 'MCParticleCollectionName': ['MCParticle'], 'MCPhysicsParticleCollectionName': ['MCPhysicsParticles'], 'NBunchtrain': ['30'], 'NumberBackground': ['3.2'], 'PhysicsBX': ['10'], 'Poisson_random_NOverlay': ['true'], 'RandomBx': ['false'], 'TPCDriftvelocity': ['0.05']}
+Option name: Refit.OutputLevel Refit.OutputLevel 4
+Option name: Refit.ProcessorType Refit.ProcessorType RefitFinal
+Option name: Refit.Parameters Refit.Parameters {'EnergyLossOn': ['true'], 'InputRelationCollectionName': ['SiTrackRelations'], 'InputTrackCollectionName': ['SiTracks'], 'Max_Chi2_Incr': ['1.79769e+30'], 'MinClustersOnTrackAfterFit': ['3'], 'MultipleScatteringOn': ['true'], 'OutputRelationCollectionName': ['SiTracks_Refitted_Relation'], 'OutputTrackCollectionName': ['SiTracks_Refitted'], 'ReferencePoint': ['-1'], 'SmoothOn': ['false'], 'extrapolateForward': ['true']}
+Option name: MyHitResiduals.OutputLevel MyHitResiduals.OutputLevel 4
+Option name: MyHitResiduals.ProcessorType MyHitResiduals.ProcessorType HitResiduals
+Option name: MyHitResiduals.Parameters MyHitResiduals.Parameters {'EnergyLossOn': ['true'], 'MaxChi2Increment': ['1000'], 'MultipleScatteringOn': ['true'], 'SmoothOn': ['false'], 'TrackCollectionName': ['SiTracks_Refitted'], 'outFileName': ['residuals.root'], 'treeName': ['restree']}
+Option name: BeamCalReco3TeV.OutputLevel BeamCalReco3TeV.OutputLevel 4
+Option name: BeamCalReco3TeV.ProcessorType BeamCalReco3TeV.ProcessorType BeamCalClusterReco
+Option name: BeamCalReco3TeV.Parameters BeamCalReco3TeV.Parameters {'BackgroundMethod': ['Gaussian'], 'BeamCalCollectionName': ['BeamCalCollection'], 'CreateEfficiencyFile': ['false'], 'DetectorName': ['BeamCal'], 'DetectorStartingLayerID': ['1'], 'ETCluster': ['5.0', '4.0', '3.0', '2.0', '2.0', '1.0'], 'ETPad': ['0.5', '0.4', '0.3', '0.2', '0.15', '0.1'], 'EfficiencyFilename': ['TaggingEfficiency.root'], 'InputFileBackgrounds': ['BeamCal_BackgroundPars_3TeV.root'], 'LinearCalibrationFactor': ['116.44'], 'MCParticleCollectionName': ['MCParticle'], 'MinimumTowerSize': ['4'], 'NShowerCountingLayers': ['3'], 'NumberOfBX': ['40'], 'PrintThisEvent': ['-1'], 'RecoClusterCollectionname': ['BeamCalClusters'], 'RecoParticleCollectionname': ['BeamCalRecoParticles'], 'SigmaCut': ['1'], 'StartLookingInLayer': ['10'], 'StartingRing': ['0.0', '1.0', '1.5', '2.5', '3.5', '4.5'], 'SubClusterEnergyID': ['5'], 'TowerChi2ndfLimit': ['5'], 'UseChi2Selection': ['false'], 'UseConstPadCuts': ['true']}
+Option name: MyTruthTrackFinder.OutputLevel MyTruthTrackFinder.OutputLevel 4
+Option name: MyTruthTrackFinder.ProcessorType MyTruthTrackFinder.ProcessorType TruthTrackFinder
+Option name: MyTruthTrackFinder.Parameters MyTruthTrackFinder.Parameters {'FitForward': ['true'], 'MCParticleCollectionName': ['MCParticle'], 'SiTrackCollectionName': ['SiTracks'], 'SiTrackRelationCollectionName': ['SiTrackRelations'], 'SimTrackerHitRelCollectionNames': ['VXDTrackerHitRelations', 'InnerTrackerBarrelHitsRelations', 'OuterTrackerBarrelHitsRelations', 'VXDEndcapTrackerHitRelations', 'InnerTrackerEndcapHitsRelations', 'OuterTrackerEndcapHitsRelations'], 'TrackerHitCollectionNames': ['VXDTrackerHits', 'ITrackerHits', 'OTrackerHits', 'VXDEndcapTrackerHits', 'ITrackerEndcapHits', 'OTrackerEndcapHits'], 'UseTruthInPrefit': ['false']}
+Option name: MyTrackChecker.OutputLevel MyTrackChecker.OutputLevel 4
+Option name: MyTrackChecker.ProcessorType MyTrackChecker.ProcessorType TrackChecker
+Option name: MyTrackChecker.Parameters MyTrackChecker.Parameters {'MCParticleCollectionName': ['MCParticle'], 'TrackCollectionName': ['SiTracks_Refitted'], 'TrackRelationCollectionName': ['SiTracksMCTruthLink'], 'TreeName': ['checktree'], 'UseOnlyTree': ['true']}
+Option name: LumiCalReco_Obs.OutputLevel LumiCalReco_Obs.OutputLevel 4
+Option name: LumiCalReco_Obs.ProcessorType LumiCalReco_Obs.ProcessorType MarlinLumiCalClusterer
+Option name: LumiCalReco_Obs.Parameters LumiCalReco_Obs.Parameters {'ClusterMinNumHits': ['15'], 'ElementsPercentInShowerPeakLayer': ['0.03'], 'EnergyCalibConst': ['0.01213'], 'LogWeigthConstant': ['6.5'], 'LumiCal_Clusters': ['LumiCalClusters'], 'LumiCal_Collection': ['LumiCalCollection'], 'LumiCal_RecoParticles': ['LumiCalRecoParticles'], 'MaxRecordNumber': ['5'], 'MemoryResidentTree': ['0'], 'MiddleEnergyHitBoundFrac': ['0.01'], 'MinClusterEngy': ['2.0'], 'MinHitEnergy': ['20e-06'], 'MoliereRadius': ['20'], 'NumEventsTree': ['500'], 'NumOfNearNeighbor': ['6'], 'OutDirName': ['rootOut'], 'OutRootFileName': [], 'SkipNEvents': ['0'], 'WeightingMethod': ['LogMethod'], 'ZLayerPhiOffset': ['0.0']}
+Option name: OverlayFalse.OutputLevel OverlayFalse.OutputLevel 2
+Option name: OverlayFalse.ProcessorType OverlayFalse.ProcessorType OverlayTimingGeneric
+Option name: OverlayFalse.Parameters OverlayFalse.Parameters {'BackgroundFileNames': [], 'Collection_IntegrationTimes': ['VertexBarrelCollection', '10', 'VertexEndcapCollection', '10', 'InnerTrackerBarrelCollection', '10', 'InnerTrackerEndcapCollection', '10', 'OuterTrackerBarrelCollection', '10', 'OuterTrackerEndcapCollection', '10', 'ECalBarrelCollection', '10', 'ECalEndcapCollection', '10', 'ECalPlugCollection', '10', 'HCalBarrelCollection', '10', 'HCalEndcapCollection', '10', 'HCalRingCollection', '10', 'YokeBarrelCollection', '10', 'YokeEndcapCollection', '10', 'LumiCalCollection', '10', 'BeamCalCollection', '10'], 'Delta_t': ['0.5'], 'MCParticleCollectionName': ['MCParticle'], 'MCPhysicsParticleCollectionName': ['MCPhysicsParticles'], 'NBunchtrain': ['0'], 'NumberBackground': ['0.'], 'PhysicsBX': ['10'], 'Poisson_random_NOverlay': ['true'], 'RandomBx': ['false'], 'TPCDriftvelocity': ['0.05']}
+Option name: InputReader.OutputLevel InputReader.OutputLevel 2
+Option name: InputReader.collections InputReader.collections ['EventHeader', 'MCParticles', 'VertexBarrelCollection', 'VertexEndcapCollection', 'InnerTrackerBarrelCollection', 'OuterTrackerBarrelCollection', 'InnerTrackerEndcapCollection', 'OuterTrackerEndcapCollection', 'ECalEndcapCollection', 'ECalEndcapCollectionContributions', 'ECalBarrelCollection', 'ECalBarrelCollectionContributions', 'ECalPlugCollection', 'ECalPlugCollectionContributions', 'HCalBarrelCollection', 'HCalBarrelCollectionContributions', 'HCalEndcapCollection', 'HCalEndcapCollectionContributions', 'HCalRingCollection', 'HCalRingCollectionContributions', 'YokeBarrelCollection', 'YokeBarrelCollectionContributions', 'YokeEndcapCollection', 'YokeEndcapCollectionContributions', 'LumiCalCollection', 'LumiCalCollectionContributions', 'BeamCalCollection', 'BeamCalCollectionContributions']
+Option name: PodioOutput.OutputLevel PodioOutput.OutputLevel 0
+Option name: PodioOutput.filename PodioOutput.filename my_MarlinOutput.root
+Option name: PodioOutput.outputCommands PodioOutput.outputCommands ['keep *']
+Option name: PodioOutput.remoteFilename PodioOutput.remoteFilename 
+Option name: CLICPfoSelectorTight_LE.OutputLevel CLICPfoSelectorTight_LE.OutputLevel 4
+Option name: CLICPfoSelectorTight_LE.ProcessorType CLICPfoSelectorTight_LE.ProcessorType CLICPfoSelector
+Option name: CLICPfoSelectorTight_LE.Parameters CLICPfoSelectorTight_LE.Parameters {'ChargedPfoLooseTimingCut': ['4.0'], 'ChargedPfoNegativeLooseTimingCut': ['-2.0'], 'ChargedPfoNegativeTightTimingCut': ['-1.0'], 'ChargedPfoPtCut': ['0.0'], 'ChargedPfoPtCutForLooseTiming': ['3.0'], 'ChargedPfoTightTimingCut': ['2.0'], 'CheckKaonCorrection': ['0'], 'CheckProtonCorrection': ['0'], 'ClusterLessPfoTrackTimeCut': ['10.'], 'CorrectHitTimesForTimeOfFlight': ['0'], 'DisplayRejectedPfos': ['1'], 'DisplaySelectedPfos': ['1'], 'FarForwardCosTheta': ['0.975'], 'ForwardCosThetaForHighEnergyNeutralHadrons': ['0.95'], 'ForwardHighEnergyNeutralHadronsEnergy': ['10'], 'HCalBarrelLooseTimingCut': ['4'], 'HCalBarrelTightTimingCut': ['2'], 'HCalEndCapTimingFactor': ['1'], 'InputPfoCollection': ['PandoraPFOs'], 'KeepKShorts': ['1'], 'MaxMomentumForClusterLessPfos': ['5.0'], 'MinECalHitsForTiming': ['5'], 'MinHCalEndCapHitsForTiming': ['5'], 'MinMomentumForClusterLessPfos': ['0.0'], 'MinPtForClusterLessPfos': ['0.75'], 'MinimumEnergyForNeutronTiming': ['1'], 'Monitoring': ['0'], 'MonitoringPfoEnergyToDisplay': ['1'], 'NeutralFarForwardLooseTimingCut': ['2.0'], 'NeutralFarForwardTightTimingCut': ['2.0'], 'NeutralHadronBarrelPtCutForLooseTiming': ['3.5'], 'NeutralHadronLooseTimingCut': ['4.0'], 'NeutralHadronPtCut': ['0.0'], 'NeutralHadronPtCutForLooseTiming': ['3.0'], 'NeutralHadronTightTimingCut': ['2.0'], 'PhotonFarForwardLooseTimingCut': ['2'], 'PhotonFarForwardTightTimingCut': ['1'], 'PhotonLooseTimingCut': ['1.0'], 'PhotonPtCut': ['0.0'], 'PhotonPtCutForLooseTiming': ['2.0'], 'PhotonTightTimingCut': ['1.0'], 'PtCutForTightTiming': ['0.75'], 'SelectedPfoCollection': ['LE_TightSelectedPandoraPFOs'], 'UseClusterLessPfos': ['1'], 'UseNeutronTiming': ['0']}
+Option name: OuterEndcapPlanarDigiProcessor.OutputLevel OuterEndcapPlanarDigiProcessor.OutputLevel 4
+Option name: OuterEndcapPlanarDigiProcessor.ProcessorType OuterEndcapPlanarDigiProcessor.ProcessorType DDPlanarDigiProcessor
+Option name: OuterEndcapPlanarDigiProcessor.Parameters OuterEndcapPlanarDigiProcessor.Parameters {'IsStrip': ['false'], 'ResolutionU': ['0.007', '0.007', '0.007', '0.007', '0.007'], 'ResolutionV': ['0.09', '0.09', '0.09', '0.09', '0.09'], 'SimTrackHitCollectionName': ['OuterTrackerEndcapCollection'], 'SimTrkHitRelCollection': ['OuterTrackerEndcapHitsRelations'], 'SubDetectorName': ['OuterTrackers'], 'TrackerHitCollectionName': ['OTrackerEndcapHits']}
+Option name: InitDD4hep.OutputLevel InitDD4hep.OutputLevel 4
+Option name: InitDD4hep.ProcessorType InitDD4hep.ProcessorType InitializeDD4hep
+Option name: InitDD4hep.Parameters InitDD4hep.Parameters {'DD4hepXMLFile': ['/cvmfs/sw.hsf.org/spackages6/lcgeo/0.16.8/x86_64-centos7-gcc11.2.0-opt/qnhv2/share/lcgeo/compact/CLIC/compact/CLIC_o3_v14/CLIC_o3_v14.xml'], 'EncodingStringParameter': ['GlobalTrackerReadoutID']}
+Option name: Overlay3TeV_L6.OutputLevel Overlay3TeV_L6.OutputLevel 4
+Option name: Overlay3TeV_L6.ProcessorType Overlay3TeV_L6.ProcessorType OverlayTimingGeneric
+Option name: Overlay3TeV_L6.Parameters Overlay3TeV_L6.Parameters {'BackgroundFileNames': ['gghad_01.slcio', 'gghad_02.slcio'], 'Collection_IntegrationTimes': ['VertexBarrelCollection', '10', 'VertexEndcapCollection', '10', 'InnerTrackerBarrelCollection', '10', 'InnerTrackerEndcapCollection', '10', 'OuterTrackerBarrelCollection', '10', 'OuterTrackerEndcapCollection', '10', 'ECalBarrelCollection', '10', 'ECalEndcapCollection', '10', 'ECalPlugCollection', '10', 'HCalBarrelCollection', '10', 'HCalEndcapCollection', '10', 'HCalRingCollection', '10', 'YokeBarrelCollection', '10', 'YokeEndcapCollection', '10', 'LumiCalCollection', '10', 'BeamCalCollection', '10'], 'Delta_t': ['0.5'], 'MCParticleCollectionName': ['MCParticle'], 'MCPhysicsParticleCollectionName': ['MCPhysicsParticles'], 'NBunchtrain': ['30'], 'NumberBackground': ['3.12'], 'PhysicsBX': ['10'], 'Poisson_random_NOverlay': ['true'], 'RandomBx': ['false'], 'TPCDriftvelocity': ['0.05']}
+Option name: OuterPlanarDigiProcessor.OutputLevel OuterPlanarDigiProcessor.OutputLevel 4
+Option name: OuterPlanarDigiProcessor.ProcessorType OuterPlanarDigiProcessor.ProcessorType DDPlanarDigiProcessor
+Option name: OuterPlanarDigiProcessor.Parameters OuterPlanarDigiProcessor.Parameters {'IsStrip': ['false'], 'ResolutionU': ['0.007', '0.007', '0.007'], 'ResolutionV': ['0.09', '0.09', '0.09'], 'SimTrackHitCollectionName': ['OuterTrackerBarrelCollection'], 'SimTrkHitRelCollection': ['OuterTrackerBarrelHitsRelations'], 'SubDetectorName': ['OuterTrackers'], 'TrackerHitCollectionName': ['OTrackerHits']}
+Option name: Overlay380GeV_L6.OutputLevel Overlay380GeV_L6.OutputLevel 4
+Option name: Overlay380GeV_L6.ProcessorType Overlay380GeV_L6.ProcessorType OverlayTimingGeneric
+Option name: Overlay380GeV_L6.Parameters Overlay380GeV_L6.Parameters {'BackgroundFileNames': ['gghad_01.slcio', 'gghad_02.slcio'], 'Collection_IntegrationTimes': ['VertexBarrelCollection', '10', 'VertexEndcapCollection', '10', 'InnerTrackerBarrelCollection', '10', 'InnerTrackerEndcapCollection', '10', 'OuterTrackerBarrelCollection', '10', 'OuterTrackerEndcapCollection', '10', 'ECalBarrelCollection', '10', 'ECalEndcapCollection', '10', 'ECalPlugCollection', '10', 'HCalBarrelCollection', '10', 'HCalEndcapCollection', '10', 'HCalRingCollection', '10', 'YokeBarrelCollection', '10', 'YokeEndcapCollection', '10', 'LumiCalCollection', '10', 'BeamCalCollection', '10'], 'Delta_t': ['0.5'], 'MCParticleCollectionName': ['MCParticle'], 'MCPhysicsParticleCollectionName': ['MCPhysicsParticles'], 'NBunchtrain': ['30'], 'NumberBackground': ['0.178'], 'PhysicsBX': ['10'], 'Poisson_random_NOverlay': ['true'], 'RandomBx': ['false'], 'TPCDriftvelocity': ['0.05']}
+Option name: Overlay380GeV_CDR.OutputLevel Overlay380GeV_CDR.OutputLevel 4
+Option name: Overlay380GeV_CDR.ProcessorType Overlay380GeV_CDR.ProcessorType OverlayTimingGeneric
+Option name: Overlay380GeV_CDR.Parameters Overlay380GeV_CDR.Parameters {'BackgroundFileNames': ['gghad_01.slcio', 'gghad_02.slcio'], 'Collection_IntegrationTimes': ['VertexBarrelCollection', '10', 'VertexEndcapCollection', '10', 'InnerTrackerBarrelCollection', '10', 'InnerTrackerEndcapCollection', '10', 'OuterTrackerBarrelCollection', '10', 'OuterTrackerEndcapCollection', '10', 'ECalBarrelCollection', '10', 'ECalEndcapCollection', '10', 'ECalPlugCollection', '10', 'HCalBarrelCollection', '10', 'HCalEndcapCollection', '10', 'HCalRingCollection', '10', 'YokeBarrelCollection', '10', 'YokeEndcapCollection', '10', 'LumiCalCollection', '10', 'BeamCalCollection', '10'], 'Delta_t': ['0.5'], 'MCParticleCollectionName': ['MCParticle'], 'MCPhysicsParticleCollectionName': ['MCPhysicsParticles'], 'NBunchtrain': ['30'], 'NumberBackground': ['0.0464'], 'PhysicsBX': ['10'], 'Poisson_random_NOverlay': ['true'], 'RandomBx': ['false'], 'TPCDriftvelocity': ['0.05']}
+Option name: MyDDSimpleMuonDigi.OutputLevel MyDDSimpleMuonDigi.OutputLevel 4
+Option name: MyDDSimpleMuonDigi.ProcessorType MyDDSimpleMuonDigi.ProcessorType DDSimpleMuonDigi
+Option name: MyDDSimpleMuonDigi.Parameters MyDDSimpleMuonDigi.Parameters {'CalibrMUON': ['70.1'], 'MUONCollections': ['YokeBarrelCollection', 'YokeEndcapCollection'], 'MUONOutputCollection': ['MUON'], 'MaxHitEnergyMUON': ['2.0'], 'MuonThreshold': ['1e-06'], 'RelationOutputCollection': ['RelationMuonHit']}
+Option name: Overlay350GeV.OutputLevel Overlay350GeV.OutputLevel 4
+Option name: Overlay350GeV.ProcessorType Overlay350GeV.ProcessorType OverlayTimingGeneric
+Option name: Overlay350GeV.Parameters Overlay350GeV.Parameters {'BackgroundFileNames': ['gghad_01.slcio', 'gghad_02.slcio'], 'Collection_IntegrationTimes': ['VertexBarrelCollection', '10', 'VertexEndcapCollection', '10', 'InnerTrackerBarrelCollection', '10', 'InnerTrackerEndcapCollection', '10', 'OuterTrackerBarrelCollection', '10', 'OuterTrackerEndcapCollection', '10', 'ECalBarrelCollection', '10', 'ECalEndcapCollection', '10', 'ECalPlugCollection', '10', 'HCalBarrelCollection', '10', 'HCalEndcapCollection', '10', 'HCalRingCollection', '10', 'YokeBarrelCollection', '10', 'YokeEndcapCollection', '10', 'LumiCalCollection', '10', 'BeamCalCollection', '10'], 'Delta_t': ['0.5'], 'MCParticleCollectionName': ['MCParticle'], 'MCPhysicsParticleCollectionName': ['MCPhysicsParticles'], 'NBunchtrain': ['30'], 'NumberBackground': ['0.16'], 'PhysicsBX': ['10'], 'Poisson_random_NOverlay': ['true'], 'RandomBx': ['false'], 'TPCDriftvelocity': ['0.05']}
+Option name: MergeRP.OutputLevel MergeRP.OutputLevel 4
+Option name: MergeRP.ProcessorType MergeRP.ProcessorType MergeCollections
+Option name: MergeRP.Parameters MergeRP.Parameters {'CollectionParameterIndex': ['0'], 'InputCollectionIDs': [], 'InputCollections': ['PandoraPFOs', 'LumiCalRecoParticles', 'BeamCalRecoParticles'], 'OutputCollection': ['MergedRecoParticles']}
+Option name: CLICPfoSelectorDefault_HE.OutputLevel CLICPfoSelectorDefault_HE.OutputLevel 4
+Option name: CLICPfoSelectorDefault_HE.ProcessorType CLICPfoSelectorDefault_HE.ProcessorType CLICPfoSelector
+Option name: CLICPfoSelectorDefault_HE.Parameters CLICPfoSelectorDefault_HE.Parameters {'ChargedPfoLooseTimingCut': ['3'], 'ChargedPfoNegativeLooseTimingCut': ['-1'], 'ChargedPfoNegativeTightTimingCut': ['-0.5'], 'ChargedPfoPtCut': ['0'], 'ChargedPfoPtCutForLooseTiming': ['4'], 'ChargedPfoTightTimingCut': ['1.5'], 'CheckKaonCorrection': ['0'], 'CheckProtonCorrection': ['0'], 'ClusterLessPfoTrackTimeCut': ['10'], 'CorrectHitTimesForTimeOfFlight': ['0'], 'DisplayRejectedPfos': ['1'], 'DisplaySelectedPfos': ['1'], 'FarForwardCosTheta': ['0.975'], 'ForwardCosThetaForHighEnergyNeutralHadrons': ['0.95'], 'ForwardHighEnergyNeutralHadronsEnergy': ['10'], 'HCalBarrelLooseTimingCut': ['20'], 'HCalBarrelTightTimingCut': ['10'], 'HCalEndCapTimingFactor': ['1'], 'InputPfoCollection': ['PandoraPFOs'], 'KeepKShorts': ['1'], 'MaxMomentumForClusterLessPfos': ['2'], 'MinECalHitsForTiming': ['5'], 'MinHCalEndCapHitsForTiming': ['5'], 'MinMomentumForClusterLessPfos': ['0.5'], 'MinPtForClusterLessPfos': ['0.5'], 'MinimumEnergyForNeutronTiming': ['1'], 'Monitoring': ['0'], 'MonitoringPfoEnergyToDisplay': ['1'], 'NeutralFarForwardLooseTimingCut': ['2'], 'NeutralFarForwardTightTimingCut': ['1'], 'NeutralHadronBarrelPtCutForLooseTiming': ['3.5'], 'NeutralHadronLooseTimingCut': ['2.5'], 'NeutralHadronPtCut': ['0'], 'NeutralHadronPtCutForLooseTiming': ['8'], 'NeutralHadronTightTimingCut': ['1.5'], 'PhotonFarForwardLooseTimingCut': ['2'], 'PhotonFarForwardTightTimingCut': ['1'], 'PhotonLooseTimingCut': ['2'], 'PhotonPtCut': ['0'], 'PhotonPtCutForLooseTiming': ['4'], 'PhotonTightTimingCut': ['1'], 'PtCutForTightTiming': ['0.75'], 'SelectedPfoCollection': ['SelectedPandoraPFOs'], 'UseClusterLessPfos': ['1'], 'UseNeutronTiming': ['0']}
+Option name: EventNumber.OutputLevel EventNumber.OutputLevel 4
+Option name: EventNumber.ProcessorType EventNumber.ProcessorType Statusmonitor
+Option name: EventNumber.Parameters EventNumber.Parameters {'HowOften': ['1']}
+Option name: RenameCollection.OutputLevel RenameCollection.OutputLevel 4
+Option name: RenameCollection.ProcessorType RenameCollection.ProcessorType MergeCollections
+Option name: RenameCollection.Parameters RenameCollection.Parameters {'CollectionParameterIndex': ['0'], 'InputCollectionIDs': [], 'InputCollections': ['PandoraPFOs'], 'OutputCollection': ['PFOsFromJets']}
+Option name: MyAIDAProcessor.OutputLevel MyAIDAProcessor.OutputLevel 4
+Option name: MyAIDAProcessor.ProcessorType MyAIDAProcessor.ProcessorType AIDAProcessor
+Option name: MyAIDAProcessor.Parameters MyAIDAProcessor.Parameters {'Compress': ['1'], 'FileName': ['histograms'], 'FileType': ['root']}
+Option name: VXDBarrelDigitiser.OutputLevel VXDBarrelDigitiser.OutputLevel 4
+Option name: VXDBarrelDigitiser.ProcessorType VXDBarrelDigitiser.ProcessorType DDPlanarDigiProcessor
+Option name: VXDBarrelDigitiser.Parameters VXDBarrelDigitiser.Parameters {'IsStrip': ['false'], 'ResolutionU': ['3', '3', '3', '3', '3', '3'], 'ResolutionV': ['3', '3', '3', '3', '3', '3'], 'SimTrackHitCollectionName': ['VertexBarrelCollection'], 'SimTrkHitRelCollection': ['VXDTrackerHitRelations'], 'SubDetectorName': ['Vertex'], 'TrackerHitCollectionName': ['VXDTrackerHits'], 'ForceHitsOntoSurface': ['True'], 'MinimumEnergyPerHit': ['0.0']}
+Option name: InnerPlanarDigiProcessor.OutputLevel InnerPlanarDigiProcessor.OutputLevel 4
+Option name: InnerPlanarDigiProcessor.ProcessorType InnerPlanarDigiProcessor.ProcessorType DDPlanarDigiProcessor
+Option name: InnerPlanarDigiProcessor.Parameters InnerPlanarDigiProcessor.Parameters {'IsStrip': ['false'], 'ResolutionU': ['0.007'], 'ResolutionV': ['0.09'], 'SimTrackHitCollectionName': ['InnerTrackerBarrelCollection'], 'SimTrkHitRelCollection': ['InnerTrackerBarrelHitsRelations'], 'SubDetectorName': ['InnerTrackers'], 'TrackerHitCollectionName': ['ITrackerHits']}
+Option name: Overlay500GeV.OutputLevel Overlay500GeV.OutputLevel 4
+Option name: Overlay500GeV.ProcessorType Overlay500GeV.ProcessorType OverlayTimingGeneric
+Option name: Overlay500GeV.Parameters Overlay500GeV.Parameters {'BackgroundFileNames': ['gghad_01.slcio', 'gghad_02.slcio'], 'Collection_IntegrationTimes': ['VertexBarrelCollection', '10', 'VertexEndcapCollection', '10', 'InnerTrackerBarrelCollection', '10', 'InnerTrackerEndcapCollection', '10', 'OuterTrackerBarrelCollection', '10', 'OuterTrackerEndcapCollection', '10', 'ECalBarrelCollection', '10', 'ECalEndcapCollection', '10', 'ECalPlugCollection', '10', 'HCalBarrelCollection', '10', 'HCalEndcapCollection', '10', 'HCalRingCollection', '10', 'YokeBarrelCollection', '10', 'YokeEndcapCollection', '10', 'LumiCalCollection', '10', 'BeamCalCollection', '10'], 'Delta_t': ['0.5'], 'MCParticleCollectionName': ['MCParticle'], 'MCPhysicsParticleCollectionName': ['MCPhysicsParticles'], 'NBunchtrain': ['30'], 'NumberBackground': ['0.3'], 'PhysicsBX': ['10'], 'Poisson_random_NOverlay': ['true'], 'RandomBx': ['false'], 'TPCDriftvelocity': ['0.05']}
+Option name: MergeClusters.OutputLevel MergeClusters.OutputLevel 4
+Option name: MergeClusters.ProcessorType MergeClusters.ProcessorType MergeCollections
+Option name: MergeClusters.Parameters MergeClusters.Parameters {'CollectionParameterIndex': ['0'], 'InputCollectionIDs': [], 'InputCollections': ['PandoraClusters', 'LumiCalClusterer', 'BeamCalClusters'], 'OutputCollection': ['MergedClusters']}
+Option name: CLICPfoSelectorLoose_HE.OutputLevel CLICPfoSelectorLoose_HE.OutputLevel 4
+Option name: CLICPfoSelectorLoose_HE.ProcessorType CLICPfoSelectorLoose_HE.ProcessorType CLICPfoSelector
+Option name: CLICPfoSelectorLoose_HE.Parameters CLICPfoSelectorLoose_HE.Parameters {'ChargedPfoLooseTimingCut': ['3'], 'ChargedPfoNegativeLooseTimingCut': ['-2.0'], 'ChargedPfoNegativeTightTimingCut': ['-2.0'], 'ChargedPfoPtCut': ['0'], 'ChargedPfoPtCutForLooseTiming': ['4'], 'ChargedPfoTightTimingCut': ['1.5'], 'CheckKaonCorrection': ['0'], 'CheckProtonCorrection': ['0'], 'ClusterLessPfoTrackTimeCut': ['1000.'], 'CorrectHitTimesForTimeOfFlight': ['0'], 'DisplayRejectedPfos': ['1'], 'DisplaySelectedPfos': ['1'], 'FarForwardCosTheta': ['0.975'], 'ForwardCosThetaForHighEnergyNeutralHadrons': ['0.95'], 'ForwardHighEnergyNeutralHadronsEnergy': ['10'], 'HCalBarrelLooseTimingCut': ['20'], 'HCalBarrelTightTimingCut': ['10'], 'HCalEndCapTimingFactor': ['1'], 'InputPfoCollection': ['PandoraPFOs'], 'KeepKShorts': ['1'], 'MaxMomentumForClusterLessPfos': ['2'], 'MinECalHitsForTiming': ['5'], 'MinHCalEndCapHitsForTiming': ['5'], 'MinMomentumForClusterLessPfos': ['0.0'], 'MinPtForClusterLessPfos': ['0.25'], 'MinimumEnergyForNeutronTiming': ['1'], 'Monitoring': ['0'], 'MonitoringPfoEnergyToDisplay': ['1'], 'NeutralFarForwardLooseTimingCut': ['2.5'], 'NeutralFarForwardTightTimingCut': ['1.5'], 'NeutralHadronBarrelPtCutForLooseTiming': ['3.5'], 'NeutralHadronLooseTimingCut': ['2.5'], 'NeutralHadronPtCut': ['0'], 'NeutralHadronPtCutForLooseTiming': ['8'], 'NeutralHadronTightTimingCut': ['1.5'], 'PhotonFarForwardLooseTimingCut': ['2'], 'PhotonFarForwardTightTimingCut': ['1'], 'PhotonLooseTimingCut': ['2.'], 'PhotonPtCut': ['0'], 'PhotonPtCutForLooseTiming': ['4'], 'PhotonTightTimingCut': ['2.'], 'PtCutForTightTiming': ['0.75'], 'SelectedPfoCollection': ['LooseSelectedPandoraPFOs'], 'UseClusterLessPfos': ['1'], 'UseNeutronTiming': ['0']}
+Option name: CLICPfoSelectorDefault_LE.OutputLevel CLICPfoSelectorDefault_LE.OutputLevel 4
+Option name: CLICPfoSelectorDefault_LE.ProcessorType CLICPfoSelectorDefault_LE.ProcessorType CLICPfoSelector
+Option name: CLICPfoSelectorDefault_LE.Parameters CLICPfoSelectorDefault_LE.Parameters {'ChargedPfoLooseTimingCut': ['10.0'], 'ChargedPfoNegativeLooseTimingCut': ['-5.0'], 'ChargedPfoNegativeTightTimingCut': ['-2.0'], 'ChargedPfoPtCut': ['0.0'], 'ChargedPfoPtCutForLooseTiming': ['4.0'], 'ChargedPfoTightTimingCut': ['3.0'], 'CheckKaonCorrection': ['0'], 'CheckProtonCorrection': ['0'], 'ClusterLessPfoTrackTimeCut': ['10.'], 'CorrectHitTimesForTimeOfFlight': ['0'], 'DisplayRejectedPfos': ['1'], 'DisplaySelectedPfos': ['1'], 'FarForwardCosTheta': ['0.975'], 'ForwardCosThetaForHighEnergyNeutralHadrons': ['0.95'], 'ForwardHighEnergyNeutralHadronsEnergy': ['10'], 'HCalBarrelLooseTimingCut': ['5'], 'HCalBarrelTightTimingCut': ['2.5'], 'HCalEndCapTimingFactor': ['1'], 'InputPfoCollection': ['PandoraPFOs'], 'KeepKShorts': ['1'], 'MaxMomentumForClusterLessPfos': ['5.0'], 'MinECalHitsForTiming': ['5'], 'MinHCalEndCapHitsForTiming': ['5'], 'MinMomentumForClusterLessPfos': ['0.0'], 'MinPtForClusterLessPfos': ['0.0'], 'MinimumEnergyForNeutronTiming': ['1'], 'Monitoring': ['0'], 'MonitoringPfoEnergyToDisplay': ['1'], 'NeutralFarForwardLooseTimingCut': ['4.0'], 'NeutralFarForwardTightTimingCut': ['2.0'], 'NeutralHadronBarrelPtCutForLooseTiming': ['3.5'], 'NeutralHadronLooseTimingCut': ['5.0'], 'NeutralHadronPtCut': ['0.0'], 'NeutralHadronPtCutForLooseTiming': ['2.0'], 'NeutralHadronTightTimingCut': ['2.5'], 'PhotonFarForwardLooseTimingCut': ['2'], 'PhotonFarForwardTightTimingCut': ['1'], 'PhotonLooseTimingCut': ['5.0'], 'PhotonPtCut': ['0.0'], 'PhotonPtCutForLooseTiming': ['2.0'], 'PhotonTightTimingCut': ['1.0'], 'PtCutForTightTiming': ['0.75'], 'SelectedPfoCollection': ['LE_SelectedPandoraPFOs'], 'UseClusterLessPfos': ['1'], 'UseNeutronTiming': ['0']}
+Option name: EventDataSvc.OutputLevel EventDataSvc.OutputLevel 0
+Option name: EventDataSvc.input EventDataSvc.input ddsimout_500_9298_0_edm4hep.root
+Option name: EventDataSvc.FirstEventEntry EventDataSvc.FirstEventEntry 0
+Option name: MyDDCaloDigi.OutputLevel MyDDCaloDigi.OutputLevel 4
+Option name: MyDDCaloDigi.ProcessorType MyDDCaloDigi.ProcessorType DDCaloDigi
+Option name: MyDDCaloDigi.Parameters MyDDCaloDigi.Parameters {'CalibECALMIP': ['0.0001'], 'CalibHCALMIP': ['0.0001'], 'CalibrECAL': ['35.8411424188', '35.8411424188'], 'CalibrHCALBarrel': ['49.2031079063'], 'CalibrHCALEndcap': ['53.6263377733'], 'CalibrHCALOther': ['62.2125698179'], 'ECALBarrelTimeWindowMax': ['10'], 'ECALCollections': ['ECalBarrelCollection', 'ECalEndcapCollection', 'ECalPlugCollection'], 'ECALCorrectTimesForPropagation': ['1'], 'ECALDeltaTimeHitResolution': ['10'], 'ECALEndcapCorrectionFactor': ['1.0672142727'], 'ECALEndcapTimeWindowMax': ['10'], 'ECALGapCorrection': ['1'], 'ECALGapCorrectionFactor': ['1'], 'ECALLayers': ['41', '100'], 'ECALModuleGapCorrectionFactor': ['0.0'], 'ECALOutputCollection0': ['ECALBarrel'], 'ECALOutputCollection1': ['ECALEndcap'], 'ECALOutputCollection2': ['ECALOther'], 'ECALSimpleTimingCut': ['true'], 'ECALThreshold': ['5e-05'], 'ECALThresholdUnit': ['GeV'], 'ECALTimeResolution': ['10'], 'ECALTimeWindowMin': ['-1'], 'ECAL_PPD_N_Pixels': ['10000'], 'ECAL_PPD_N_Pixels_uncertainty': ['0.05'], 'ECAL_PPD_PE_per_MIP': ['7'], 'ECAL_apply_realistic_digi': ['0'], 'ECAL_deadCellRate': ['0'], 'ECAL_deadCell_memorise': ['false'], 'ECAL_default_layerConfig': ['000000000000000'], 'ECAL_elec_noise_mips': ['0'], 'ECAL_maxDynamicRange_MIP': ['2500'], 'ECAL_miscalibration_correl': ['0'], 'ECAL_miscalibration_uncorrel': ['0'], 'ECAL_miscalibration_uncorrel_memorise': ['false'], 'ECAL_pixel_spread': ['0.05'], 'ECAL_strip_absorbtionLength': ['1e+06'], 'HCALBarrelTimeWindowMax': ['10'], 'HCALCollections': ['HCalBarrelCollection', 'HCalEndcapCollection', 'HCalRingCollection'], 'HCALCorrectTimesForPropagation': ['1'], 'HCALDeltaTimeHitResolution': ['10'], 'HCALEndcapCorrectionFactor': ['1.000'], 'HCALEndcapTimeWindowMax': ['10'], 'HCALGapCorrection': ['1'], 'HCALLayers': ['100'], 'HCALModuleGapCorrectionFactor': ['0.5'], 'HCALOutputCollection0': ['HCALBarrel'], 'HCALOutputCollection1': ['HCALEndcap'], 'HCALOutputCollection2': ['HCALOther'], 'HCALSimpleTimingCut': ['true'], 'HCALThreshold': ['0.00025'], 'HCALThresholdUnit': ['GeV'], 'HCALTimeResolution': ['10'], 'HCALTimeWindowMin': ['-1'], 'HCAL_PPD_N_Pixels': ['400'], 'HCAL_PPD_N_Pixels_uncertainty': ['0.05'], 'HCAL_PPD_PE_per_MIP': ['10'], 'HCAL_apply_realistic_digi': ['0'], 'HCAL_deadCellRate': ['0'], 'HCAL_deadCell_memorise': ['false'], 'HCAL_elec_noise_mips': ['0'], 'HCAL_maxDynamicRange_MIP': ['200'], 'HCAL_miscalibration_correl': ['0'], 'HCAL_miscalibration_uncorrel': ['0'], 'HCAL_miscalibration_uncorrel_memorise': ['false'], 'HCAL_pixel_spread': ['0'], 'Histograms': ['0'], 'IfDigitalEcal': ['0'], 'IfDigitalHcal': ['0'], 'MapsEcalCorrection': ['0'], 'RelationOutputCollection': ['RelationCaloHit'], 'RootFile': ['Digi_SiW.root'], 'StripEcal_default_nVirtualCells': ['9'], 'UseEcalTiming': ['1'], 'UseHcalTiming': ['1'], 'energyPerEHpair': ['3.6']}
+Option name: CLICPfoSelectorLoose_LE.OutputLevel CLICPfoSelectorLoose_LE.OutputLevel 4
+Option name: CLICPfoSelectorLoose_LE.ProcessorType CLICPfoSelectorLoose_LE.ProcessorType CLICPfoSelector
+Option name: CLICPfoSelectorLoose_LE.Parameters CLICPfoSelectorLoose_LE.Parameters ApplicationMgr    SUCCESS 
+====================================================================================================================================
+                                                   Welcome to ApplicationMgr (GaudiCoreSvc v36r5)
+                                          running on pcb03 on Wed Sep  7 15:11:08 2022
+====================================================================================================================================
+InputReader         DEBUG Property update for OutputLevel : new value = 2
+InputReader         DEBUG Initialize base class GaudiCommon<Algorithm>
+InputReader         DEBUG could not locate CounterSummarySvc, no counter summary will be made
+InputReader         DEBUG List of ALL properties of PodioInput/InputReader  #properties = 29
+InputReader         DEBUG Property ['Name': Value] =  'collections':[ 'EventHeader' , 'MCParticles' , 'VertexBarrelCollection' , 'VertexEndcapCollection' , 'InnerTrackerBarrelCollection' , 'OuterTrackerBarrelCollection' , 'InnerTrackerEndcapCollection' , 'OuterTrackerEndcapCollection' , 'ECalEndcapCollection' , 'ECalEndcapCollectionContributions' , 'ECalBarrelCollection' , 'ECalBarrelCollectionContributions' , 'ECalPlugCollection' , 'ECalPlugCollectionContributions' , 'HCalBarrelCollection' , 'HCalBarrelCollectionContributions' , 'HCalEndcapCollection' , 'HCalEndcapCollectionContributions' , 'HCalRingCollection' , 'HCalRingCollectionContributions' , 'YokeBarrelCollection' , 'YokeBarrelCollectionContributions' , 'YokeEndcapCollection' , 'YokeEndcapCollectionContributions' , 'LumiCalCollection' , 'LumiCalCollectionContributions' , 'BeamCalCollection' , 'BeamCalCollectionContributions' ]
+InputReader         DEBUG Property ['Name': Value] =  'RequireObjects':[  ]
+InputReader         DEBUG Property ['Name': Value] =  'VetoObjects':[  ]
+InputReader         DEBUG Property ['Name': Value] =  'CounterList':[ '.*' ]
+InputReader         DEBUG Property ['Name': Value] =  'Context':''
+InputReader         DEBUG Property ['Name': Value] =  'TypePrint':True
+InputReader         DEBUG Property ['Name': Value] =  'PropertiesPrint':False
+InputReader         DEBUG Property ['Name': Value] =  'ErrorsPrint':True
+InputReader         DEBUG Property ['Name': Value] =  'RootInTES':''
+InputReader         DEBUG Property ['Name': Value] =  'FilterCircularDependencies':True
+InputReader         DEBUG Property ['Name': Value] =  'Blocking':False
+InputReader         DEBUG Property ['Name': Value] =  'NeededResources':[  ]
+InputReader         DEBUG Property ['Name': Value] =  'Cardinality':1
+InputReader         DEBUG Property ['Name': Value] =  'RegisterForContextService':True
+InputReader         DEBUG Property ['Name': Value] =  'MonitorService':'MonitorSvc'
+InputReader         DEBUG Property ['Name': Value] =  'Timeline':False
+InputReader         DEBUG Property ['Name': Value] =  'AuditStop':False
+InputReader         DEBUG Property ['Name': Value] =  'AuditStart':False
+InputReader         DEBUG Property ['Name': Value] =  'AuditFinalize':False
+InputReader         DEBUG Property ['Name': Value] =  'AuditExecute':False
+InputReader         DEBUG Property ['Name': Value] =  'AuditRestart':False
+InputReader         DEBUG Property ['Name': Value] =  'AuditReinitialize':False
+InputReader         DEBUG Property ['Name': Value] =  'AuditInitialize':False
+InputReader         DEBUG Property ['Name': Value] =  'AuditAlgorithms':False
+InputReader         DEBUG Property ['Name': Value] =  'ErrorMax':1
+InputReader         DEBUG Property ['Name': Value] =  'Enable':True
+InputReader         DEBUG Property ['Name': Value] =  'OutputLevel':2
+InputReader         DEBUG Property ['Name': Value] =  'ExtraOutputs':[]
+InputReader         DEBUG Property ['Name': Value] =  'ExtraInputs':[]
+InputReader         DEBUG Finding collection EventHeader in collection registry.
+InputReader         DEBUG Finding collection MCParticles in collection registry.
+InputReader         DEBUG Finding collection VertexBarrelCollection in collection registry.
+InputReader         DEBUG Finding collection VertexEndcapCollection in collection registry.
+InputReader         DEBUG Finding collection InnerTrackerBarrelCollection in collection registry.
+InputReader         DEBUG Finding collection OuterTrackerBarrelCollection in collection registry.
+InputReader         DEBUG Finding collection InnerTrackerEndcapCollection in collection registry.
+InputReader         DEBUG Finding collection OuterTrackerEndcapCollection in collection registry.
+InputReader         DEBUG Finding collection ECalEndcapCollection in collection registry.
+InputReader         DEBUG Finding collection ECalEndcapCollectionContributions in collection registry.
+InputReader         DEBUG Finding collection ECalBarrelCollection in collection registry.
+InputReader         DEBUG Finding collection ECalBarrelCollectionContributions in collection registry.
+InputReader         DEBUG Finding collection ECalPlugCollection in collection registry.
+InputReader         DEBUG Finding collection ECalPlugCollectionContributions in collection registry.
+InputReader         DEBUG Finding collection HCalBarrelCollection in collection registry.
+InputReader         DEBUG Finding collection HCalBarrelCollectionContributions in collection registry.
+InputReader         DEBUG Finding collection HCalEndcapCollection in collection registry.
+InputReader         DEBUG Finding collection HCalEndcapCollectionContributions in collection registry.
+InputReader         DEBUG Finding collection HCalRingCollection in collection registry.
+InputReader         DEBUG Finding collection HCalRingCollectionContributions in collection registry.
+InputReader         DEBUG Finding collection YokeBarrelCollection in collection registry.
+InputReader         DEBUG Finding collection YokeBarrelCollectionContributions in collection registry.
+InputReader         DEBUG Finding collection YokeEndcapCollection in collection registry.
+InputReader         DEBUG Finding collection YokeEndcapCollectionContributions in collection registry.
+InputReader         DEBUG Finding collection LumiCalCollection in collection registry.
+InputReader         DEBUG Finding collection LumiCalCollectionContributions in collection registry.
+InputReader         DEBUG Finding collection BeamCalCollection in collection registry.
+InputReader         DEBUG Finding collection BeamCalCollectionContributions in collection registry.
+InputReader         DEBUG input handles: 0
+InputReader         DEBUG output handles: 0
+InputReader         DEBUG Data Deps for InputReader
+[ MESSAGE "MyAIDAProcessor"] 
+[ MESSAGE "MyAIDAProcessor"] ---- MyAIDAProcessor -  parameters: 
+[ MESSAGE "MyAIDAProcessor"] 	Compress:  1
+[ MESSAGE "MyAIDAProcessor"] 	FileName:  histograms
+[ MESSAGE "MyAIDAProcessor"] 	FileType:  root
+[ MESSAGE "MyAIDAProcessor"] -------------------------------------------------
+---------------------------------- R A I D A ----------------------------------
+ROOT Implementation of the Abstract Interfaces for Data Analysis (AIDA v3.2.1)
+
+RAIDA Version: not supported by cvs2svn
+
+RAIDA only creates simple ROOT histograms
+Used ROOT Release: 6.26/02
+-------------------------------------------------------------------------------
+
+ToolSvc.EDM4hep...  DEBUG Property update for OutputLevel : new value = 2
+ToolSvc.EDM4hep...  DEBUG Initialize base class GaudiCommon<AlgTool>
+ToolSvc.EDM4hep...  DEBUG could not locate CounterSummarySvc, no counter summary will be made
+ToolSvc.EDM4hep...  DEBUG List of ALL properties of EDM4hep2LcioTool/ToolSvc.EDM4hep2lcio  #properties = 19
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'Parameters':[ '*' ]
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'ContextService':'AlgContextSvc'
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'CounterList':[ '.*' ]
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'Context':''
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'TypePrint':True
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'PropertiesPrint':False
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'ErrorsPrint':True
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'RootInTES':''
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'AuditRestart':False
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'AuditReinitialize':False
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'AuditFinalize':False
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'AuditStop':False
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'AuditStart':False
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'AuditInitialize':False
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'AuditTools':False
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'MonitorService':'MonitorSvc'
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'OutputLevel':2
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'ExtraOutputs':[]
+ToolSvc.EDM4hep...  DEBUG Property ['Name': Value] =  'ExtraInputs':[]
+[ MESSAGE "EventNumber"] 
+[ MESSAGE "EventNumber"] ---- EventNumber -  parameters: 
+[ MESSAGE "EventNumber"] 	HowOften:  1
+[ MESSAGE "EventNumber"] -------------------------------------------------
+[ MESSAGE "InitDD4hep"]  -------------------------------------
+[ MESSAGE "InitDD4hep"]  ---- Initializing DD4hep from file  /cvmfs/sw.hsf.org/spackages6/lcgeo/0.16.8/x86_64-centos7-gcc11.2.0-opt/qnhv2/share/lcgeo/compact/CLIC/compact/CLIC_o3_v14/CLIC_o3_v14.xml ... 
+PersistencyIO    INFO  +++ Set Streamer to dd4hep::OpaqueDataBlock
+DD4hep           WARN  ++ STD conditions NOT defined by client. NTP defaults taken.
+Detector         INFO  *********** Created World volume with size: 3000 3000 3000
+Utilities        INFO  +++ setDetectorTypeFlags for detector :Beampipe no xml element <type_flags/> found - nothing to set 
+DD4hep_Beampipe  INFO         0     308    29.4    29.4      30      30     0.6       0                   tube_VertexInner      Beryllium
+DD4hep_Beampipe  INFO       308     337    29.4    29.4      30    33.4     0.6       0                 tube_ConeConnector           Iron
+DD4hep_Beampipe  INFO       337    2080    29.4   235.2    33.4     240       4       0                       tube_BigCone           Iron
+DD4hep_Beampipe  INFO      2080    2528   235.2   235.2     240     240     4.8       0              tube_LumiCalConnector           Iron
+DD4hep_Beampipe  INFO      2528    2531       0      98     240     240     240       3                  tube_LumiCalFront           Iron
+DD4hep_Beampipe  INFO      2531    3170      98      98      99      99       1       7              tube_BeamCalConnector           Iron
+DD4hep_Beampipe  INFO      3170    3173     2.7      31      99      99    96.3       5                  tube_BeamCalFront           Iron
+DD4hep_Beampipe  INFO      3173    3500      31      31   31.99   31.99    0.99       2        tube_BeamCalInnerDownstream           Iron
+DD4hep_Beampipe  INFO      3173    3281     2.7     2.7    3.69    3.69    0.99      12          tube_BeamCalInnerUpstream           Iron
+DD4hep_Beampipe  INFO      3281    3835     2.7     2.7     3.7     3.7       1       1                 tube_UpstreamSmall           Iron
+DD4hep_Beampipe  INFO      3835    3845     2.7      12     3.7    13.5       1       1                  tube_UpstreamCone           Iron
+DD4hep_Beampipe  INFO      3845   12500      12      12    13.5    13.5     1.5       1                 tube_UpstreamLarge           Iron
+DD4hep_Beampipe  INFO      3500   12500      31 125.004      32 127.004       1       2                tube_DownstreamCone           Iron
+Compact          INFO  ++ Converted subdetector:Beampipe of type DD4hep_Beampipe_o1_v01 
+DD4hep_Mask      INFO      3455    3715       4       4      25      25      21       1                        tube_Kicker           Iron       0 6.28319
+Compact          INFO  ++ Converted subdetector:Kicker of type DD4hep_Mask_o1_v01 
+DD4hep_Mask      INFO      3730    3820      36      36      55      55      19       2                           tube_BPM           Iron       0 6.28319
+Compact          INFO  ++ Converted subdetector:BPM of type DD4hep_Mask_o1_v01 
+Utilities        INFO  +++ setDetectorTypeFlags for detector :Vertex no xml element <type_flags/> found - nothing to set 
+Compact          INFO  ++ Converted subdetector:Vertex of type DD4hep_SubdetectorAssembly 
+Compact          INFO  ++ Converted subdetector:VertexBarrel of type ZPlanarTracker [tracker]
+XXX Vertex endcap layers: 6
+Compact          INFO  ++ Converted subdetector:VertexEndcap of type VertexEndcap_o1_v06 [tracker]
+Compact          INFO  ++ Converted subdetector:VertexVerticalCable of type TrackerEndcapSupport_o1_v01 
+VertexEndcap     INFO  +++ Processing SurfaceInstaller for subdetector: 'VertexEndcap'
+DD4hep_GenericSurfaceInstallerPlugin: argument[1] = dimension = 2
+DD4hep_GenericSurfaceInstallerPlugin: argument[2] = u_x = -1
+DD4hep_GenericSurfaceInstallerPlugin: argument[3] = v_z = 1
+DD4hep_GenericSurfaceInstallerPlugin: argument[4] = n_y = 1
+DD4hep_GenericSurfaceInstallerPlugin: vectors: u( -1 , 0 , 0) v( 0 , 0 , 1) n( 0 , 1 , 0) o( 0 , 0 , 0) 
+Utilities        INFO  +++ setDetectorTypeFlags for detector :InnerTrackers no xml element <type_flags/> found - nothing to set 
+Compact          INFO  ++ Converted subdetector:InnerTrackers of type DD4hep_SubdetectorAssembly 
+Compact          INFO  ++ Converted subdetector:InnerTrackerBarrel of type TrackerBarrel_o1_v05 [tracker]
+Compact          INFO  ++ Converted subdetector:InnerTrackerEndcap of type TrackerEndcap_o2_v06 [tracker]
+Compact          INFO  ++ Converted subdetector:InnerTrackerBarrelSupport of type TrackerBarrelSupport_o1_v01 
+Compact          INFO  ++ Converted subdetector:InnerTrackerEndcapSupport of type TrackerEndcapSupport_o1_v01 
+Compact          INFO  ++ Converted subdetector:InnerTrackerInterlink of type TubeSupport_o1_v01 
+Compact          INFO  ++ Converted subdetector:InnerTrackerVertexCable of type TubeSupport_o1_v01 
+Compact          INFO  ++ Converted subdetector:BeampipeShell of type ConicalSupport_o1_v01 
+Compact          INFO  ++ Converted subdetector:BeampipeShell2 of type TrackerEndcapSupport_o1_v01 
+Compact          INFO  ++ Converted subdetector:BeampipeShell3 of type TrackerBarrelSupport_o1_v01 
+InnerTrackerBarrel INFO  +++ Processing SurfaceInstaller for subdetector: 'InnerTrackerBarrel'
+DD4hep_GenericSurfaceInstallerPlugin: argument[1] = dimension = 2
+DD4hep_GenericSurfaceInstallerPlugin: argument[2] = u_x = 1
+DD4hep_GenericSurfaceInstallerPlugin: argument[3] = v_y = 1
+DD4hep_GenericSurfaceInstallerPlugin: argument[4] = n_z = 1
+DD4hep_GenericSurfaceInstallerPlugin: vectors: u( 1 , 0 , 0) v( 0 , 1 , 0) n( 0 , 0 , 1) o( 0 , 0 , 0) 
+InnerTrackerEndcap INFO  +++ Processing SurfaceInstaller for subdetector: 'InnerTrackerEndcap'
+DD4hep_GenericSurfaceInstallerPlugin: argument[1] = dimension = 2
+DD4hep_GenericSurfaceInstallerPlugin: argument[2] = u_x = 1
+DD4hep_GenericSurfaceInstallerPlugin: argument[3] = v_y = 1
+DD4hep_GenericSurfaceInstallerPlugin: argument[4] = n_z = 1
+DD4hep_GenericSurfaceInstallerPlugin: vectors: u( 1 , 0 , 0) v( 0 , 1 , 0) n( 0 , 0 , 1) o( 0 , 0 , 0) 
+Utilities        INFO  +++ setDetectorTypeFlags for detector :OuterTrackers no xml element <type_flags/> found - nothing to set 
+Compact          INFO  ++ Converted subdetector:OuterTrackers of type DD4hep_SubdetectorAssembly 
+Compact          INFO  ++ Converted subdetector:OuterTrackerBarrel of type TrackerBarrel_o1_v05 [tracker]
+Compact          INFO  ++ Converted subdetector:OuterTrackerEndcap of type TrackerEndcap_o2_v06 [tracker]
+Compact          INFO  ++ Converted subdetector:OuterTrackerBarrelSupport of type TrackerBarrelSupport_o1_v01 
+Compact          INFO  ++ Converted subdetector:OuterTrackerEndcapSupport of type TrackerEndcapSupport_o1_v01 
+OuterTrackerBarrel INFO  +++ Processing SurfaceInstaller for subdetector: 'OuterTrackerBarrel'
+DD4hep_GenericSurfaceInstallerPlugin: argument[1] = dimension = 2
+DD4hep_GenericSurfaceInstallerPlugin: argument[2] = u_x = 1
+DD4hep_GenericSurfaceInstallerPlugin: argument[3] = v_y = 1
+DD4hep_GenericSurfaceInstallerPlugin: argument[4] = n_z = 1
+DD4hep_GenericSurfaceInstallerPlugin: vectors: u( 1 , 0 , 0) v( 0 , 1 , 0) n( 0 , 0 , 1) o( 0 , 0 , 0) 
+OuterTrackerEndcap INFO  +++ Processing SurfaceInstaller for subdetector: 'OuterTrackerEndcap'
+DD4hep_GenericSurfaceInstallerPlugin: argument[1] = dimension = 2
+DD4hep_GenericSurfaceInstallerPlugin: argument[2] = u_x = 1
+DD4hep_GenericSurfaceInstallerPlugin: argument[3] = v_y = 1
+DD4hep_GenericSurfaceInstallerPlugin: argument[4] = n_z = 1
+DD4hep_GenericSurfaceInstallerPlugin: vectors: u( 1 , 0 , 0) v( 0 , 1 , 0) n( 0 , 0 , 1) o( 0 , 0 , 0) 
+Layer: 0 Rmin: 150 layer_pos_z: -9.8475 Dist: 150 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 1 Rmin: 150 layer_pos_z: -9.3425 Dist: 150.505 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 2 Rmin: 150 layer_pos_z: -8.8375 Dist: 151.01 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 3 Rmin: 150 layer_pos_z: -8.3325 Dist: 151.515 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 4 Rmin: 150 layer_pos_z: -7.8275 Dist: 152.02 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 5 Rmin: 150 layer_pos_z: -7.3225 Dist: 152.525 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 6 Rmin: 150 layer_pos_z: -6.8175 Dist: 153.03 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 7 Rmin: 150 layer_pos_z: -6.3125 Dist: 153.535 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 8 Rmin: 150 layer_pos_z: -5.8075 Dist: 154.04 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 9 Rmin: 150 layer_pos_z: -5.3025 Dist: 154.545 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 10 Rmin: 150 layer_pos_z: -4.7975 Dist: 155.05 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 11 Rmin: 150 layer_pos_z: -4.2925 Dist: 155.555 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 12 Rmin: 150 layer_pos_z: -3.7875 Dist: 156.06 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 13 Rmin: 150 layer_pos_z: -3.2825 Dist: 156.565 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 14 Rmin: 150 layer_pos_z: -2.7775 Dist: 157.07 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 15 Rmin: 150 layer_pos_z: -2.2725 Dist: 157.575 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 16 Rmin: 150 layer_pos_z: -1.7675 Dist: 158.08 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 17 Rmin: 150 layer_pos_z: -1.2625 Dist: 158.585 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 18 Rmin: 150 layer_pos_z: -0.7575 Dist: 159.09 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 19 Rmin: 150 layer_pos_z: -0.2525 Dist: 159.595 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 20 Rmin: 150 layer_pos_z: 0.2525 Dist: 160.1 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 21 Rmin: 150 layer_pos_z: 0.7575 Dist: 160.605 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 22 Rmin: 150 layer_pos_z: 1.2625 Dist: 161.11 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 23 Rmin: 150 layer_pos_z: 1.7675 Dist: 161.615 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 24 Rmin: 150 layer_pos_z: 2.2725 Dist: 162.12 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 25 Rmin: 150 layer_pos_z: 2.7775 Dist: 162.625 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 26 Rmin: 150 layer_pos_z: 3.2825 Dist: 163.13 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 27 Rmin: 150 layer_pos_z: 3.7875 Dist: 163.635 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 28 Rmin: 150 layer_pos_z: 4.2925 Dist: 164.14 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 29 Rmin: 150 layer_pos_z: 4.7975 Dist: 164.645 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 30 Rmin: 150 layer_pos_z: 5.3025 Dist: 165.15 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 31 Rmin: 150 layer_pos_z: 5.8075 Dist: 165.655 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 32 Rmin: 150 layer_pos_z: 6.3125 Dist: 166.16 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 33 Rmin: 150 layer_pos_z: 6.8175 Dist: 166.665 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 34 Rmin: 150 layer_pos_z: 7.3225 Dist: 167.17 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 35 Rmin: 150 layer_pos_z: 7.8275 Dist: 167.675 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 36 Rmin: 150 layer_pos_z: 8.3325 Dist: 168.18 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 37 Rmin: 150 layer_pos_z: 8.8375 Dist: 168.685 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 38 Rmin: 150 layer_pos_z: 9.3425 Dist: 169.19 inner_thickness: 0.24 outer_thickness: 0.265
+Layer: 39 Rmin: 150 layer_pos_z: 9.8475 Dist: 169.695 inner_thickness: 0.24 outer_thickness: 0.265
+Compact          INFO  ++ Converted subdetector:ECalBarrel of type GenericCalBarrel_o1_v01 [calorimeter]
+ECalBarrel       INFO  +++ Processing SurfaceInstaller for subdetector: 'ECalBarrel'
+DD4hep_CaloFaceBarrelSurfacePlugin INFO  install tracking surfaces for :  ECalBarrel 
+Number of layers in group 0 : 40
+Compact          INFO  ++ Converted subdetector:ECalEndcap of type GenericCalEndcap_o1_v01 [calorimeter]
+ECalEndcap       INFO  +++ Processing SurfaceInstaller for subdetector: 'ECalEndcap'
+DD4hep_CaloFaceEndcapSurfacePlugin INFO  install tracking surfaces for :  ECalEndcap 
+Number of layers in group 0 : 40
+Compact          INFO  ++ Converted subdetector:ECalPlug of type GenericCalEndcap_o1_v01 [calorimeter]
+Layer: 0 Rmin: 174 layer_pos_z: -78.175 Dist: 174 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 1 Rmin: 174 layer_pos_z: -75.525 Dist: 176.65 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 2 Rmin: 174 layer_pos_z: -72.875 Dist: 179.3 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 3 Rmin: 174 layer_pos_z: -70.225 Dist: 181.95 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 4 Rmin: 174 layer_pos_z: -67.575 Dist: 184.6 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 5 Rmin: 174 layer_pos_z: -64.925 Dist: 187.25 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 6 Rmin: 174 layer_pos_z: -62.275 Dist: 189.9 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 7 Rmin: 174 layer_pos_z: -59.625 Dist: 192.55 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 8 Rmin: 174 layer_pos_z: -56.975 Dist: 195.2 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 9 Rmin: 174 layer_pos_z: -54.325 Dist: 197.85 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 10 Rmin: 174 layer_pos_z: -51.675 Dist: 200.5 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 11 Rmin: 174 layer_pos_z: -49.025 Dist: 203.15 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 12 Rmin: 174 layer_pos_z: -46.375 Dist: 205.8 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 13 Rmin: 174 layer_pos_z: -43.725 Dist: 208.45 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 14 Rmin: 174 layer_pos_z: -41.075 Dist: 211.1 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 15 Rmin: 174 layer_pos_z: -38.425 Dist: 213.75 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 16 Rmin: 174 layer_pos_z: -35.775 Dist: 216.4 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 17 Rmin: 174 layer_pos_z: -33.125 Dist: 219.05 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 18 Rmin: 174 layer_pos_z: -30.475 Dist: 221.7 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 19 Rmin: 174 layer_pos_z: -27.825 Dist: 224.35 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 20 Rmin: 174 layer_pos_z: -25.175 Dist: 227 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 21 Rmin: 174 layer_pos_z: -22.525 Dist: 229.65 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 22 Rmin: 174 layer_pos_z: -19.875 Dist: 232.3 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 23 Rmin: 174 layer_pos_z: -17.225 Dist: 234.95 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 24 Rmin: 174 layer_pos_z: -14.575 Dist: 237.6 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 25 Rmin: 174 layer_pos_z: -11.925 Dist: 240.25 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 26 Rmin: 174 layer_pos_z: -9.275 Dist: 242.9 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 27 Rmin: 174 layer_pos_z: -6.625 Dist: 245.55 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 28 Rmin: 174 layer_pos_z: -3.975 Dist: 248.2 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 29 Rmin: 174 layer_pos_z: -1.325 Dist: 250.85 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 30 Rmin: 174 layer_pos_z: 1.325 Dist: 253.5 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 31 Rmin: 174 layer_pos_z: 3.975 Dist: 256.15 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 32 Rmin: 174 layer_pos_z: 6.625 Dist: 258.8 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 33 Rmin: 174 layer_pos_z: 9.275 Dist: 261.45 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 34 Rmin: 174 layer_pos_z: 11.925 Dist: 264.1 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 35 Rmin: 174 layer_pos_z: 14.575 Dist: 266.75 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 36 Rmin: 174 layer_pos_z: 17.225 Dist: 269.4 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 37 Rmin: 174 layer_pos_z: 19.875 Dist: 272.05 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 38 Rmin: 174 layer_pos_z: 22.525 Dist: 274.7 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 39 Rmin: 174 layer_pos_z: 25.175 Dist: 277.35 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 40 Rmin: 174 layer_pos_z: 27.825 Dist: 280 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 41 Rmin: 174 layer_pos_z: 30.475 Dist: 282.65 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 42 Rmin: 174 layer_pos_z: 33.125 Dist: 285.3 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 43 Rmin: 174 layer_pos_z: 35.775 Dist: 287.95 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 44 Rmin: 174 layer_pos_z: 38.425 Dist: 290.6 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 45 Rmin: 174 layer_pos_z: 41.075 Dist: 293.25 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 46 Rmin: 174 layer_pos_z: 43.725 Dist: 295.9 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 47 Rmin: 174 layer_pos_z: 46.375 Dist: 298.55 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 48 Rmin: 174 layer_pos_z: 49.025 Dist: 301.2 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 49 Rmin: 174 layer_pos_z: 51.675 Dist: 303.85 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 50 Rmin: 174 layer_pos_z: 54.325 Dist: 306.5 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 51 Rmin: 174 layer_pos_z: 56.975 Dist: 309.15 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 52 Rmin: 174 layer_pos_z: 59.625 Dist: 311.8 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 53 Rmin: 174 layer_pos_z: 62.275 Dist: 314.45 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 54 Rmin: 174 layer_pos_z: 64.925 Dist: 317.1 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 55 Rmin: 174 layer_pos_z: 67.575 Dist: 319.75 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 56 Rmin: 174 layer_pos_z: 70.225 Dist: 322.4 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 57 Rmin: 174 layer_pos_z: 72.875 Dist: 325.05 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 58 Rmin: 174 layer_pos_z: 75.525 Dist: 327.7 inner_thickness: 2.1 outer_thickness: 0.55
+Layer: 59 Rmin: 174 layer_pos_z: 78.175 Dist: 330.35 inner_thickness: 2.1 outer_thickness: 0.55
+Compact          INFO  ++ Converted subdetector:HCalBarrel of type GenericCalBarrel_o1_v01 [calorimeter]
+Utilities        INFO  +++ setDetectorTypeFlags for detector :HCalEndcaps no xml element <type_flags/> found - nothing to set 
+Compact          INFO  ++ Converted subdetector:HCalEndcaps of type DD4hep_SubdetectorAssembly 
+Cutout z width will be  21.2
+Number of layers in group 0 : 8
+Number of layers in group 1 : 52
+Compact          INFO  ++ Converted subdetector:HCalEndcap of type GenericCalEndcap_o1_v01 [calorimeter]
+Cutout z width will be  18.55
+Number of layers in group 0 : 7
+Compact          INFO  ++ Converted subdetector:HCalRing of type GenericCalEndcap_o1_v01 [calorimeter]
+Utilities        INFO  +++ setDetectorTypeFlags for detector :Solenoid no xml element <type_flags/> found - nothing to set 
+Compact          INFO  ++ Converted subdetector:Solenoid of type DD4hep_SubdetectorAssembly 
+Compact          INFO  ++ Converted subdetector:SolenoidBarrel of type DD4hep_Solenoid_o1_v01 
+Compact          INFO  ++ Converted subdetector:SolenoidEndcaps of type DD4hep_DiskTracker 
+Layer: 0 Rmin: 446.1 layer_pos_z: -85.2 Dist: 446.1 inner_thickness: 0.75 outer_thickness: 27.65
+Layer: 1 Rmin: 446.1 layer_pos_z: -56.8 Dist: 474.5 inner_thickness: 0.75 outer_thickness: 27.65
+Layer: 2 Rmin: 446.1 layer_pos_z: -28.4 Dist: 502.9 inner_thickness: 0.75 outer_thickness: 27.65
+Layer: 3 Rmin: 446.1 layer_pos_z: 3.55271e-15 Dist: 531.3 inner_thickness: 0.75 outer_thickness: 27.65
+Layer: 4 Rmin: 446.1 layer_pos_z: 28.4 Dist: 559.7 inner_thickness: 0.75 outer_thickness: 27.65
+Layer: 5 Rmin: 446.1 layer_pos_z: 56.8 Dist: 588.1 inner_thickness: 0.75 outer_thickness: 27.65
+Layer: 6 Rmin: 446.1 layer_pos_z: 85.2 Dist: 616.5 inner_thickness: 0.75 outer_thickness: 27.65
+Compact          INFO  ++ Converted subdetector:YokeBarrel of type GenericCalBarrel_o1_v01 [calorimeter]
+Number of layers in group 0 : 6
+Number of layers in group 1 : 1
+Compact          INFO  ++ Converted subdetector:YokeEndcap of type GenericCalEndcap_o1_v01 [calorimeter]
+dd4hep::Ref_t create_detector(dd4hep::Detector&, xml_h, dd4hep::SensitiveDetector)
+Here is my LumiCal
+ and this is the sensitive detector: 0x7ffca1188c88
+ The crossing angle is: 0.02 radian
+Total Length 17.28 cm
+Layer Thickness 0.432 cm
+Compact          INFO  ++ Converted subdetector:LumiCal of type LumiCal_o1_v01 [calorimeter]
+This is the BeamCal
+Building all.
+ The crossing angle is: 0.02 radian
+bcalCutOutSpan  174.533 mrad
+bcalCutOutSpan  10 degree
+bcalCutOutStart 3.05433 Radian
+bcalCutOutEnd   3.22886 Radian
+incommingBeamPipeRadius: 0.37 cm
+cutOutRadius: 7.27096 cm 
+Total Length 26.0032 cm
+Layer Thickness 10.4001 cm
+Total Length 26.0032 cm
+Layer Thickness 0.40008 cm
+Compact          INFO  ++ Converted subdetector:BeamCal of type BeamCal_o1_v01 [calorimeter]
+Compact          INFO  ++ Converted field: Successfully created field GlobalSolenoid [solenoid]
+Detector         INFO  +++ Patching names of anonymous shapes....
+DD4hepVolumeManager INFO  **** running plugin DD4hepVolumeManager ! 
+VolumeManager    INFO   - populating volume ids - be patient ...
+VolumeManager    INFO   - populating volume ids - done. 78114 nodes.
+VolumeManager    INFO  +++ Volume manager populated and loaded.
+InstallSurfaceManager INFO  **** running plugin InstallSurfaceManager ! 
+InstallSurfaceManager INFO  --------  SurfaceManager contains the following maps : --------- 
+  key: BPM 	 number of surfaces : 0
+  key: BeamCal 	 number of surfaces : 0
+  key: Beampipe 	 number of surfaces : 9
+  key: BeampipeShell 	 number of surfaces : 4
+  key: BeampipeShell2 	 number of surfaces : 4
+  key: BeampipeShell3 	 number of surfaces : 1
+  key: ECalBarrel 	 number of surfaces : 12
+  key: ECalEndcap 	 number of surfaces : 2
+  key: ECalPlug 	 number of surfaces : 0
+  key: HCalBarrel 	 number of surfaces : 0
+  key: HCalEndcap 	 number of surfaces : 0
+  key: HCalEndcaps 	 number of surfaces : 0
+  key: HCalRing 	 number of surfaces : 0
+  key: InnerTrackerBarrel 	 number of surfaces : 9032
+  key: InnerTrackerBarrelSupport 	 number of surfaces : 4
+  key: InnerTrackerEndcap 	 number of surfaces : 1392
+  key: InnerTrackerEndcapSupport 	 number of surfaces : 20
+  key: InnerTrackerInterlink 	 number of surfaces : 2
+  key: InnerTrackerVertexCable 	 number of surfaces : 2
+  key: InnerTrackers 	 number of surfaces : 10461
+  key: Kicker 	 number of surfaces : 0
+  key: LumiCal 	 number of surfaces : 0
+  key: OuterTrackerBarrel 	 number of surfaces : 64512
+  key: OuterTrackerBarrelSupport 	 number of surfaces : 3
+  key: OuterTrackerEndcap 	 number of surfaces : 1152
+  key: OuterTrackerEndcapSupport 	 number of surfaces : 12
+  key: OuterTrackers 	 number of surfaces : 65679
+  key: Solenoid 	 number of surfaces : 0
+  key: SolenoidBarrel 	 number of surfaces : 0
+  key: SolenoidEndcaps 	 number of surfaces : 0
+  key: Vertex 	 number of surfaces : 186
+  key: VertexBarrel 	 number of surfaces : 88
+  key: VertexEndcap 	 number of surfaces : 96
+  key: VertexVerticalCable 	 number of surfaces : 2
+  key: YokeBarrel 	 number of surfaces : 0
+  key: YokeEndcap 	 number of surfaces : 0
+  key: calorimeter 	 number of surfaces : 14
+  key: compound 	 number of surfaces : 76326
+  key: passive 	 number of surfaces : 63
+  key: tracker 	 number of surfaces : 76272
+  key: world 	 number of surfaces : 152675
+---------------------------------------------------------------- 
+
+[ MESSAGE "InitDD4hep"]  ---- instantiated  geometry for detector CLIC_o3_v14
+[ MESSAGE "InitDD4hep"]  -------------------------------------
+[ MESSAGE "InitDD4hep"]  ---------------------------------------------------------------------------------- 
+[ MESSAGE "InitDD4hep"]   LCTrackerCellID::_encoding will set to   system:5,side:-2,layer:6,module:11,sensor:8
+[ MESSAGE "InitDD4hep"]   as specified in lccd parameter  : GlobalTrackerReadoutID
+[ MESSAGE "InitDD4hep"]  ---------------------------------------------------------------------------------- 
+[ MESSAGE "InitDD4hep"] 
+[ MESSAGE "Config"] 
+[ MESSAGE "Config"] ---- Config -  parameters: 
+[ MESSAGE "Config"] 	BeamCal:  3TeV
+[ MESSAGE "Config"] 	BeamCalChoices:  3TeV 380GeV 
+[ MESSAGE "Config"] 	Overlay:  False
+[ MESSAGE "Config"] 	OverlayChoices:  False 350GeV_CDR 350GeV 350GeV_L6 380GeV 380GeV_CDR 380GeV_L6 420GeV 500GeV 1.4TeV 3TeV 3TeV_L6 
+[ MESSAGE "Config"] 	Tracking:  Conformal
+[ MESSAGE "Config"] 	TrackingChoices:  Truth Conformal 
+[ MESSAGE "Config"] 	VertexUnconstrained:  OFF
+[ MESSAGE "Config"] 	VertexUnconstrainedChoices:  ON OFF 
+[ MESSAGE "Config"] -------------------------------------------------
+[ MESSAGE "Config"] BeamCal380GeV                       false
+[ MESSAGE "Config"] BeamCal3TeV                         true
+[ MESSAGE "Config"] BeamCalNot380GeV                    true
+[ MESSAGE "Config"] BeamCalNot3TeV                      false
+[ MESSAGE "Config"] Overlay1.4TeV                       false
+[ MESSAGE "Config"] Overlay350GeV                       false
+[ MESSAGE "Config"] Overlay350GeV_CDR                   false
+[ MESSAGE "Config"] Overlay350GeV_L6                    false
+[ MESSAGE "Config"] Overlay380GeV                       false
+[ MESSAGE "Config"] Overlay380GeV_CDR                   false
+[ MESSAGE "Config"] Overlay380GeV_L6                    false
+[ MESSAGE "Config"] Overlay3TeV                         false
+[ MESSAGE "Config"] Overlay3TeV_L6                      false
+[ MESSAGE "Config"] Overlay420GeV                       false
+[ MESSAGE "Config"] Overlay500GeV                       false
+[ MESSAGE "Config"] OverlayFalse                        true
+[ MESSAGE "Config"] OverlayNot1.4TeV                    true
+[ MESSAGE "Config"] OverlayNot350GeV                    true
+[ MESSAGE "Config"] OverlayNot350GeV_CDR                true
+[ MESSAGE "Config"] OverlayNot350GeV_L6                 true
+[ MESSAGE "Config"] OverlayNot380GeV                    true
+[ MESSAGE "Config"] OverlayNot380GeV_CDR                true
+[ MESSAGE "Config"] OverlayNot380GeV_L6                 true
+[ MESSAGE "Config"] OverlayNot3TeV                      true
+[ MESSAGE "Config"] OverlayNot3TeV_L6                   true
+[ MESSAGE "Config"] OverlayNot420GeV                    true
+[ MESSAGE "Config"] OverlayNot500GeV                    true
+[ MESSAGE "Config"] OverlayNotFalse                     false
+[ MESSAGE "Config"] TrackingConformal                   true
+[ MESSAGE "Config"] TrackingNotConformal                false
+[ MESSAGE "Config"] TrackingNotTruth                    true
+[ MESSAGE "Config"] TrackingTruth                       false
+[ MESSAGE "Config"] VertexUnconstrainedNotOFF           false
+[ MESSAGE "Config"] VertexUnconstrainedNotON            true
+[ MESSAGE "Config"] VertexUnconstrainedOFF              true
+[ MESSAGE "Config"] VertexUnconstrainedON               false
+OverlayFalse        DEBUG Property update for OutputLevel : new value = 2
+OverlayFalse         INFO Parameter values for: OverlayFalse of type OverlayTimingGeneric
+OverlayFalse         INFO new processor 0x44d51b0
+OverlayFalse         INFO init 
+[ MESSAGE "OverlayFalse"] 
+[ MESSAGE "OverlayFalse"] ---- OverlayFalse -  parameters: 
+[ MESSAGE "OverlayFalse"] 	AllowReusingBackgroundFiles:  true
+[ MESSAGE "OverlayFalse"] 	BackgroundFileNames:  
+[ MESSAGE "OverlayFalse"] 	Collection_IntegrationTimes:  VertexBarrelCollection 10 VertexEndcapCollection 10 InnerTrackerBarrelCollection 10 InnerTrackerEndcapCollection 10 OuterTrackerBarrelCollection 10 OuterTrackerEndcapCollection 10 ECalBarrelCollection 10 ECalEndcapCollection 10 ECalPlugCollection 10 HCalBarrelCollection 10 HCalEndcapCollection 10 HCalRingCollection 10 YokeBarrelCollection 10 YokeEndcapCollection 10 LumiCalCollection 10 BeamCalCollection 10 
+[ MESSAGE "OverlayFalse"] 	Delta_t:  0.5
+[ MESSAGE "OverlayFalse"] 	MCParticleCollectionName:  MCParticle
+[ MESSAGE "OverlayFalse"] 	MCPhysicsParticleCollectionName:  MCPhysicsParticles
+[ MESSAGE "OverlayFalse"] 	NBunchtrain:  0
+[ MESSAGE "OverlayFalse"] 	NumberBackground:  0
+[ MESSAGE "OverlayFalse"] 	PhysicsBX:  10
+[ MESSAGE "OverlayFalse"] 	Poisson_random_NOverlay:  true
+[ MESSAGE "OverlayFalse"] 	RandomBx:  false
+[ MESSAGE "OverlayFalse"] 	TPCDriftvelocity:  0.05
+[ MESSAGE "OverlayFalse"] -------------------------------------------------
+[ WARNING "OverlayFalse"] Attention! There are 0 files in the list of background files to overlay. Make sure that the total number of background events is sufficiently large for your needs!!
+[ MESSAGE "OverlayFalse"] BeamCalCollection: 10
+[ MESSAGE "OverlayFalse"] ECalBarrelCollection: 10
+[ MESSAGE "OverlayFalse"] ECalEndcapCollection: 10
+[ MESSAGE "OverlayFalse"] ECalPlugCollection: 10
+[ MESSAGE "OverlayFalse"] HCalBarrelCollection: 10
+[ MESSAGE "OverlayFalse"] HCalEndcapCollection: 10
+[ MESSAGE "OverlayFalse"] HCalRingCollection: 10
+[ MESSAGE "OverlayFalse"] InnerTrackerBarrelCollection: 10
+[ MESSAGE "OverlayFalse"] InnerTrackerEndcapCollection: 10
+[ MESSAGE "OverlayFalse"] LumiCalCollection: 10
+[ MESSAGE "OverlayFalse"] OuterTrackerBarrelCollection: 10
+[ MESSAGE "OverlayFalse"] OuterTrackerEndcapCollection: 10
+[ MESSAGE "OverlayFalse"] VertexBarrelCollection: 10
+[ MESSAGE "OverlayFalse"] VertexEndcapCollection: 10
+[ MESSAGE "OverlayFalse"] YokeBarrelCollection: 10
+[ MESSAGE "OverlayFalse"] YokeEndcapCollection: 10
+OverlayFalse         INFO Init processor 
+OverlayFalse        DEBUG input handles: 0
+OverlayFalse        DEBUG output handles: 0
+ToolSvc.Overlay...  DEBUG Property update for OutputLevel : new value = 2
+ToolSvc.Overlay...  DEBUG Initialize base class GaudiCommon<AlgTool>
+ToolSvc.Overlay...  DEBUG could not locate CounterSummarySvc, no counter summary will be made
+ToolSvc.Overlay...  DEBUG List of ALL properties of Lcio2EDM4hepTool/ToolSvc.OverlayFalseLCIOConv  #properties = 19
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'Parameters':[ 'MCPhysicsParticles' , 'MCPhysicsParticles' ]
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'ContextService':'AlgContextSvc'
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'CounterList':[ '.*' ]
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'Context':''
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'TypePrint':True
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'PropertiesPrint':False
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'ErrorsPrint':True
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'RootInTES':''
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'AuditRestart':False
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'AuditReinitialize':False
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'AuditFinalize':False
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'AuditStop':False
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'AuditStart':False
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'AuditInitialize':False
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'AuditTools':False
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'MonitorService':'MonitorSvc'
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'OutputLevel':2
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'ExtraOutputs':[]
+ToolSvc.Overlay...  DEBUG Property ['Name': Value] =  'ExtraInputs':[]
+OverlayFalse        DEBUG Adding public ToolHandle tool ToolSvc.OverlayFalseLCIOConv (Lcio2EDM4hepTool)
+OverlayFalse        DEBUG Data Deps for OverlayFalse
+[ MESSAGE "VXDBarrelDigitiser"] 
+[ MESSAGE "VXDBarrelDigitiser"] ---- VXDBarrelDigitiser -  parameters: 
+[ MESSAGE "VXDBarrelDigitiser"] 	CorrectTimesForPropagation:  false
+[ MESSAGE "VXDBarrelDigitiser"] 	ForceHitsOntoSurface:  true
+[ MESSAGE "VXDBarrelDigitiser"] 	IsStrip:  false
+[ MESSAGE "VXDBarrelDigitiser"] 	MinimumEnergyPerHit:  0
+[ MESSAGE "VXDBarrelDigitiser"] 	ResolutionT:  -1 
+[ MESSAGE "VXDBarrelDigitiser"] 	ResolutionU:  3 3 3 3 3 3 
+[ MESSAGE "VXDBarrelDigitiser"] 	ResolutionV:  3 3 3 3 3 3 
+[ MESSAGE "VXDBarrelDigitiser"] 	SimTrackHitCollectionName:  VertexBarrelCollection
+[ MESSAGE "VXDBarrelDigitiser"] 	SimTrkHitRelCollection:  VXDTrackerHitRelations
+[ MESSAGE "VXDBarrelDigitiser"] 	SubDetectorName:  Vertex
+[ MESSAGE "VXDBarrelDigitiser"] 	TimeWindowMax:  1e+09 
+[ MESSAGE "VXDBarrelDigitiser"] 	TimeWindowMin:  -1e+09 
+[ MESSAGE "VXDBarrelDigitiser"] 	TrackerHitCollectionName:  VXDTrackerHits
+[ MESSAGE "VXDBarrelDigitiser"] 	UseTimeWindow:  false
+[ MESSAGE "VXDBarrelDigitiser"] -------------------------------------------------
+[ MESSAGE "VXDBarrelDigitiser"]  *** DDPlanarDigiProcessor::init(): creating histograms
+ToolSvc.VXDBarr...  DEBUG Property update for OutputLevel : new value = 2
+ToolSvc.VXDBarr...  DEBUG Initialize base class GaudiCommon<AlgTool>
+ToolSvc.VXDBarr...  DEBUG could not locate CounterSummarySvc, no counter summary will be made
+ToolSvc.VXDBarr...  DEBUG List of ALL properties of Lcio2EDM4hepTool/ToolSvc.VXDBarrelDigitiserLCIOConv  #properties = 19
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'Parameters':[ 'VXDTrackerHits' , 'VXDTrackerHits' , 'VXDTrackerHitRelations' , 'VXDTrackerHitRelations' ]
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'ContextService':'AlgContextSvc'
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'CounterList':[ '.*' ]
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'Context':''
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'TypePrint':True
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'PropertiesPrint':False
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'ErrorsPrint':True
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'RootInTES':''
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'AuditRestart':False
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'AuditReinitialize':False
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'AuditFinalize':False
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'AuditStop':False
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'AuditStart':False
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'AuditInitialize':False
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'AuditTools':False
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'MonitorService':'MonitorSvc'
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'OutputLevel':2
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'ExtraOutputs':[]
+ToolSvc.VXDBarr...  DEBUG Property ['Name': Value] =  'ExtraInputs':[]
+EventLoopMgr      WARNING Unable to locate service "EventSelector" 
+EventLoopMgr      WARNING No events will be processed from external input.
+InputReader         DEBUG Registering collection to read EventHeader with id 2
+InputReader         DEBUG Registering collection to read MCParticles with id 1
+InputReader         DEBUG Registering collection to read VertexBarrelCollection with id 3
+InputReader         DEBUG Registering collection to read VertexEndcapCollection with id 4
+InputReader         DEBUG Registering collection to read InnerTrackerBarrelCollection with id 5
+InputReader         DEBUG Registering collection to read OuterTrackerBarrelCollection with id 6
+InputReader         DEBUG Registering collection to read InnerTrackerEndcapCollection with id 17
+InputReader         DEBUG Registering collection to read OuterTrackerEndcapCollection with id 18
+InputReader         DEBUG Registering collection to read ECalEndcapCollection with id 9
+InputReader         DEBUG Registering collection to read ECalEndcapCollectionContributions with id 10
+InputReader         DEBUG Registering collection to read ECalBarrelCollection with id 7
+InputReader         DEBUG Registering collection to read ECalBarrelCollectionContributions with id 8
+InputReader         DEBUG Registering collection to read ECalPlugCollection with id 13
+InputReader         DEBUG Registering collection to read ECalPlugCollectionContributions with id 14
+InputReader         DEBUG Registering collection to read HCalBarrelCollection with id 11
+InputReader         DEBUG Registering collection to read HCalBarrelCollectionContributions with id 12
+InputReader         DEBUG Registering collection to read HCalEndcapCollection with id 15
+InputReader         DEBUG Registering collection to read HCalEndcapCollectionContributions with id 16
+InputReader         DEBUG Registering collection to read HCalRingCollection with id 19
+InputReader         DEBUG Registering collection to read HCalRingCollectionContributions with id 20
+InputReader         DEBUG Registering collection to read YokeBarrelCollection with id 21
+InputReader         DEBUG Registering collection to read YokeBarrelCollectionContributions with id 22
+InputReader         DEBUG Registering collection to read YokeEndcapCollection with id 23
+InputReader         DEBUG Registering collection to read YokeEndcapCollectionContributions with id 24
+InputReader         DEBUG Registering collection to read LumiCalCollection with id 25
+InputReader         DEBUG Registering collection to read LumiCalCollectionContributions with id 26
+InputReader         DEBUG Registering collection to read BeamCalCollection with id 27
+InputReader         DEBUG Registering collection to read BeamCalCollectionContributions with id 28
+ToolSvc.EDM4hep...   INFO Converting all collections from EDM4hep to LCIO
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::EventHeader with name EventHeader
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name ECalEndcapCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name ECalBarrelCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name ECalPlugCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name HCalBarrelCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name HCalEndcapCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name HCalRingCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name YokeBarrelCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name YokeEndcapCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name LumiCalCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name BeamCalCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+[ MESSAGE "EventNumber"]  ===== Run  :       0  Event:       0
+OverlayFalse        DEBUG Retrieving LCIO Event for wrapped processor OverlayFalse
+OverlayFalse        DEBUG LCIO Event retrieved successfully
+[ MESSAGE "OverlayFalse"] No background file 
+[ MESSAGE "OverlayFalse"] Starting at event: 0
+ToolSvc.Overlay...  DEBUG Collection named EventHeader already registered, skipping conversion.
+ToolSvc.Overlay...  DEBUG Converting collection: MCPhysicsParticles from LCIO to EDM4hep MCPhysicsParticles
+ToolSvc.VXDBarr...  DEBUG Collection named EventHeader already registered, skipping conversion.
+ToolSvc.VXDBarr...  DEBUG Converting collection: VXDTrackerHits from LCIO to EDM4hep VXDTrackerHits
+InputReader         DEBUG Registering collection to read EventHeader with id 2
+InputReader         DEBUG Registering collection to read MCParticles with id 1
+InputReader         DEBUG Registering collection to read VertexBarrelCollection with id 3
+InputReader         DEBUG Registering collection to read VertexEndcapCollection with id 4
+InputReader         DEBUG Registering collection to read InnerTrackerBarrelCollection with id 5
+InputReader         DEBUG Registering collection to read OuterTrackerBarrelCollection with id 6
+InputReader         DEBUG Registering collection to read InnerTrackerEndcapCollection with id 17
+InputReader         DEBUG Registering collection to read OuterTrackerEndcapCollection with id 18
+InputReader         DEBUG Registering collection to read ECalEndcapCollection with id 9
+InputReader         DEBUG Registering collection to read ECalEndcapCollectionContributions with id 10
+InputReader         DEBUG Registering collection to read ECalBarrelCollection with id 7
+InputReader         DEBUG Registering collection to read ECalBarrelCollectionContributions with id 8
+InputReader         DEBUG Registering collection to read ECalPlugCollection with id 13
+InputReader         DEBUG Registering collection to read ECalPlugCollectionContributions with id 14
+InputReader         DEBUG Registering collection to read HCalBarrelCollection with id 11
+InputReader         DEBUG Registering collection to read HCalBarrelCollectionContributions with id 12
+InputReader         DEBUG Registering collection to read HCalEndcapCollection with id 15
+InputReader         DEBUG Registering collection to read HCalEndcapCollectionContributions with id 16
+InputReader         DEBUG Registering collection to read HCalRingCollection with id 19
+InputReader         DEBUG Registering collection to read HCalRingCollectionContributions with id 20
+InputReader         DEBUG Registering collection to read YokeBarrelCollection with id 21
+InputReader         DEBUG Registering collection to read YokeBarrelCollectionContributions with id 22
+InputReader         DEBUG Registering collection to read YokeEndcapCollection with id 23
+InputReader         DEBUG Registering collection to read YokeEndcapCollectionContributions with id 24
+InputReader         DEBUG Registering collection to read LumiCalCollection with id 25
+InputReader         DEBUG Registering collection to read LumiCalCollectionContributions with id 26
+InputReader         DEBUG Registering collection to read BeamCalCollection with id 27
+InputReader         DEBUG Registering collection to read BeamCalCollectionContributions with id 28
+ToolSvc.EDM4hep...   INFO Converting all collections from EDM4hep to LCIO
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::EventHeader with name EventHeader
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name ECalEndcapCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name ECalBarrelCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name ECalPlugCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name HCalBarrelCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name HCalEndcapCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name HCalRingCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name YokeBarrelCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name YokeEndcapCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name LumiCalCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name BeamCalCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+[ MESSAGE "EventNumber"]  ===== Run  :       0  Event:       1
+OverlayFalse        DEBUG Retrieving LCIO Event for wrapped processor OverlayFalse
+OverlayFalse        DEBUG LCIO Event retrieved successfully
+[ MESSAGE "OverlayFalse"] No background file 
+[ MESSAGE "OverlayFalse"] Starting at event: 0
+ToolSvc.Overlay...  DEBUG Collection named EventHeader already registered, skipping conversion.
+ToolSvc.Overlay...  DEBUG Converting collection: MCPhysicsParticles from LCIO to EDM4hep MCPhysicsParticles
+ToolSvc.VXDBarr...  DEBUG Unsuported LCRelation for collection VXDTrackerHitRelations
+Collection named EventHeader already registered, skipping conversion.
+ToolSvc.VXDBarr...  DEBUG Converting collection: VXDTrackerHits from LCIO to EDM4hep VXDTrackerHits
+InputReader         DEBUG Registering collection to read EventHeader with id 2
+InputReader         DEBUG Registering collection to read MCParticles with id 1
+InputReader         DEBUG Registering collection to read VertexBarrelCollection with id 3
+InputReader         DEBUG Registering collection to read VertexEndcapCollection with id 4
+InputReader         DEBUG Registering collection to read InnerTrackerBarrelCollection with id 5
+InputReader         DEBUG Registering collection to read OuterTrackerBarrelCollection with id 6
+InputReader         DEBUG Registering collection to read InnerTrackerEndcapCollection with id 17
+InputReader         DEBUG Registering collection to read OuterTrackerEndcapCollection with id 18
+InputReader         DEBUG Registering collection to read ECalEndcapCollection with id 9
+InputReader         DEBUG Registering collection to read ECalEndcapCollectionContributions with id 10
+InputReader         DEBUG Registering collection to read ECalBarrelCollection with id 7
+InputReader         DEBUG Registering collection to read ECalBarrelCollectionContributions with id 8
+InputReader         DEBUG Registering collection to read ECalPlugCollection with id 13
+InputReader         DEBUG Registering collection to read ECalPlugCollectionContributions with id 14
+InputReader         DEBUG Registering collection to read HCalBarrelCollection with id 11
+InputReader         DEBUG Registering collection to read HCalBarrelCollectionContributions with id 12
+InputReader         DEBUG Registering collection to read HCalEndcapCollection with id 15
+InputReader         DEBUG Registering collection to read HCalEndcapCollectionContributions with id 16
+InputReader         DEBUG Registering collection to read HCalRingCollection with id 19
+InputReader         DEBUG Registering collection to read HCalRingCollectionContributions with id 20
+InputReader         DEBUG Registering collection to read YokeBarrelCollection with id 21
+InputReader         DEBUG Registering collection to read YokeBarrelCollectionContributions with id 22
+InputReader         DEBUG Registering collection to read YokeEndcapCollection with id 23
+InputReader         DEBUG Registering collection to read YokeEndcapCollectionContributions with id 24
+InputReader         DEBUG Registering collection to read LumiCalCollection with id 25
+InputReader         DEBUG Registering collection to read LumiCalCollectionContributions with id 26
+InputReader         DEBUG Registering collection to read BeamCalCollection with id 27
+InputReader         DEBUG Registering collection to read BeamCalCollectionContributions with id 28
+ToolSvc.EDM4hep...   INFO Converting all collections from EDM4hep to LCIO
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::EventHeader with name EventHeader
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name ECalEndcapCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name ECalBarrelCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name ECalPlugCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name HCalBarrelCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name HCalEndcapCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name HCalRingCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name YokeBarrelCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name YokeEndcapCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name LumiCalCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+ToolSvc.EDM4hep...WARNING Error trying to convert requested edm4hep::CaloHitContribution with name BeamCalCollectionContributions
+ToolSvc.EDM4hep...WARNING List of supported types: Track, TrackerHit, SimTrackerHit, Cluster, CalorimeterHit, RawCalorimeterHit, SimCalorimeterHit, Vertex, ReconstructedParticle, MCParticle.
+[ MESSAGE "EventNumber"]  ===== Run  :       0  Event:       2
+OverlayFalse        DEBUG Retrieving LCIO Event for wrapped processor OverlayFalse
+OverlayFalse        DEBUG LCIO Event retrieved successfully
+[ MESSAGE "OverlayFalse"] No background file 
+[ MESSAGE "OverlayFalse"] Starting at event: 0
+ToolSvc.Overlay...  DEBUG Collection named EventHeader already registered, skipping conversion.
+ToolSvc.Overlay...  DEBUG Converting collection: MCPhysicsParticles from LCIO to EDM4hep MCPhysicsParticles
+ToolSvc.VXDBarr...  DEBUG Unsuported LCRelation for collection VXDTrackerHitRelations
+Collection named EventHeader already registered, skipping conversion.
+ToolSvc.VXDBarr...  DEBUG Converting collection: VXDTrackerHits from LCIO to EDM4hep VXDTrackerHits
+InputReader         DEBUG Finalize base class GaudiAlgorithm
+InputReader         DEBUG Tools to release :
+InputReader         DEBUG Services to release :
+[ MESSAGE "VXDBarrelDigitiser"]  end()  VXDBarrelDigitiser processed 3 events in 0 runs 
+OverlayFalse         INFO Finalising EventNumber
+[ MESSAGE "EventNumber"] Statusmonitor::end()  EventNumber processed 3 events in 0 runs 
+ToolSvc.VXDBarr...  DEBUG Unsuported LCRelation for collection VXDTrackerHitRelations
+ ==> Finalize the base class GaudiTool 
+ToolSvc.VXDBarr...  DEBUG Tools to release :
+ToolSvc.VXDBarr...  DEBUG Services to release :
+ToolSvc.Overlay...  DEBUG  ==> Finalize the base class GaudiTool 
+ToolSvc.Overlay...  DEBUG Tools to release :
+ToolSvc.Overlay...  DEBUG Services to release :
+ToolSvc.EDM4hep...  DEBUG  ==> Finalize the base class GaudiTool 
+ToolSvc.EDM4hep...  DEBUG Tools to release :
+ToolSvc.EDM4hep...  DEBUG Services to release :
+{'ChargedPfoLooseTimingCut': ['10.0'], 'ChargedPfoNegativeLooseTimingCut': ['-20.0'], 'ChargedPfoNegativeTightTimingCut': ['-20.0'], 'ChargedPfoPtCut': ['0.0'], 'ChargedPfoPtCutForLooseTiming': ['4.0'], 'ChargedPfoTightTimingCut': ['5.0'], 'CheckKaonCorrection': ['0'], 'CheckProtonCorrection': ['0'], 'ClusterLessPfoTrackTimeCut': ['50.'], 'CorrectHitTimesForTimeOfFlight': ['0'], 'DisplayRejectedPfos': ['1'], 'DisplaySelectedPfos': ['1'], 'FarForwardCosTheta': ['0.975'], 'ForwardCosThetaForHighEnergyNeutralHadrons': ['0.95'], 'ForwardHighEnergyNeutralHadronsEnergy': ['10'], 'HCalBarrelLooseTimingCut': ['10'], 'HCalBarrelTightTimingCut': ['5'], 'HCalEndCapTimingFactor': ['1'], 'InputPfoCollection': ['PandoraPFOs'], 'KeepKShorts': ['1'], 'MaxMomentumForClusterLessPfos': ['5.0'], 'MinECalHitsForTiming': ['5'], 'MinHCalEndCapHitsForTiming': ['5'], 'MinMomentumForClusterLessPfos': ['0.0'], 'MinPtForClusterLessPfos': ['0.0'], 'MinimumEnergyForNeutronTiming': ['1'], 'Monitoring': ['0'], 'MonitoringPfoEnergyToDisplay': ['1'], 'NeutralFarForwardLooseTimingCut': ['10.0'], 'NeutralFarForwardTightTimingCut': ['5.0'], 'NeutralHadronBarrelPtCutForLooseTiming': ['3.5'], 'NeutralHadronLooseTimingCut': ['10.0'], 'NeutralHadronPtCut': ['0.0'], 'NeutralHadronPtCutForLooseTiming': ['2.0'], 'NeutralHadronTightTimingCut': ['5.0'], 'PhotonFarForwardLooseTimingCut': ['2'], 'PhotonFarForwardTightTimingCut': ['1'], 'PhotonLooseTimingCut': ['10.0'], 'PhotonPtCut': ['0.0'], 'PhotonPtCutForLooseTiming': ['2.0'], 'PhotonTightTimingCut': ['2.5'], 'PtCutForTightTiming': ['0.75'], 'SelectedPfoCollection': ['LE_LooseSelectedPandoraPFOs'], 'UseClusterLessPfos': ['1'], 'UseNeutronTiming': ['0']}
+Option name: VXDEndcapDigitiser.OutputLevel VXDEndcapDigitiser.OutputLevel 4
+Option name: VXDEndcapDigitiser.ProcessorType VXDEndcapDigitiser.ProcessorType DDPlanarDigiProcessor
+Option name: VXDEndcapDigitiser.Parameters VXDEndcapDigitiser.Parameters {'IsStrip': ['false'], 'ResolutionU': ['0.003', '0.003', '0.003', '0.003', '0.003', '0.003'], 'ResolutionV': ['0.003', '0.003', '0.003', '0.003', '0.003', '0.003'], 'SimTrackHitCollectionName': ['VertexEndcapCollection'], 'SimTrkHitRelCollection': ['VXDEndcapTrackerHitRelations'], 'SubDetectorName': ['Vertex'], 'TrackerHitCollectionName': ['VXDEndcapTrackerHits']}
+Option name: Output_DST.OutputLevel Output_DST.OutputLevel 4
+Option name: Output_DST.ProcessorType Output_DST.ProcessorType LCIOOutputProcessor
+Option name: Output_DST.Parameters Output_DST.Parameters {'DropCollectionNames': [], 'DropCollectionTypes': ['MCParticle', 'LCRelation', 'SimCalorimeterHit', 'CalorimeterHit', 'SimTrackerHit', 'TrackerHit', 'TrackerHitPlane', 'Track', 'ReconstructedParticle', 'LCFloatVec', 'Clusters'], 'FullSubsetCollections': ['EfficientMCParticles', 'InefficientMCParticles', 'MCPhysicsParticles'], 'KeepCollectionNames': ['MCParticlesSkimmed', 'MCPhysicsParticles', 'RecoMCTruthLink', 'SiTracks', 'SiTracks_Refitted', 'PandoraClusters', 'PandoraPFOs', 'SelectedPandoraPFOs', 'LooseSelectedPandoraPFOs', 'TightSelectedPandoraPFOs', 'LE_SelectedPandoraPFOs', 'LE_LooseSelectedPandoraPFOs', 'LE_TightSelectedPandoraPFOs', 'LumiCalClusters', 'LumiCalRecoParticles', 'BeamCalClusters', 'BeamCalRecoParticles', 'MergedRecoParticles', 'MergedClusters', 'RefinedVertexJets', 'RefinedVertexJets_rel', 'RefinedVertexJets_vtx', 'RefinedVertexJets_vtx_RP', 'BuildUpVertices', 'BuildUpVertices_res', 'BuildUpVertices_RP', 'BuildUpVertices_res_RP', 'BuildUpVertices_V0', 'BuildUpVertices_V0_res', 'BuildUpVertices_V0_RP', 'BuildUpVertices_V0_res_RP', 'PrimaryVertices', 'PrimaryVertices_res', 'PrimaryVertices_RP', 'PrimaryVertices_res_RP', 'RefinedVertices', 'RefinedVertices_RP'], 'LCIOOutputFile': ['Output_DST.slcio'], 'LCIOWriteMode': ['WRITE_NEW']}
+Option name: ClonesAndSplitTracksFinder.OutputLevel ClonesAndSplitTracksFinder.OutputLevel 4
+Option name: ClonesAndSplitTracksFinder.ProcessorType ClonesAndSplitTracksFinder.ProcessorType ClonesAndSplitTracksFinder
+Option name: ClonesAndSplitTracksFinder.Parameters ClonesAndSplitTracksFinder.Parameters {'EnergyLossOn': ['true'], 'InputTrackCollectionName': ['SiTracksCT'], 'MultipleScatteringOn': ['true'], 'OutputTrackCollectionName': ['SiTracks'], 'SmoothOn': ['false'], 'extrapolateForward': ['true'], 'maxSignificancePhi': ['3'], 'maxSignificancePt': ['2'], 'maxSignificanceTheta': ['3'], 'mergeSplitTracks': ['true'], 'minTrackPt': ['1']}
+Option name: MyClicEfficiencyCalculator.OutputLevel MyClicEfficiencyCalculator.OutputLevel 4
+Option name: MyClicEfficiencyCalculator.ProcessorType MyClicEfficiencyCalculator.ProcessorType ClicEfficiencyCalculator
+Option name: MyClicEfficiencyCalculator.Parameters MyClicEfficiencyCalculator.Parameters {'MCParticleCollectionName': ['MCParticle'], 'MCParticleNotReco': ['MCParticleNotReco'], 'MCPhysicsParticleCollectionName': ['MCPhysicsParticles'], 'TrackCollectionName': ['SiTracks_Refitted'], 'TrackerHitCollectionNames': ['VXDTrackerHits', 'VXDEndcapTrackerHits', 'ITrackerHits', 'OTrackerHits', 'ITrackerEndcapHits', 'OTrackerEndcapHits'], 'TrackerHitRelCollectionNames': ['VXDTrackerHitRelations', 'VXDEndcapTrackerHitRelations', 'InnerTrackerBarrelHitsRelations', 'OuterTrackerBarrelHitsRelations', 'InnerTrackerEndcapHitsRelations', 'OuterTrackerEndcapHitsRelations'], 'efficiencyTreeName': ['trktree'], 'mcTreeName': ['mctree'], 'morePlots': ['false'], 'purityTreeName': ['puritytree'], 'reconstructableDefinition': ['ILDLike'], 'vertexBarrelID': ['1']}
+Option name: VertexFinderUnconstrained.OutputLevel VertexFinderUnconstrained.OutputLevel 4
+Option name: VertexFinderUnconstrained.ProcessorType VertexFinderUnconstrained.ProcessorType LcfiplusProcessor
+Option name: VertexFinderUnconstrained.Parameters VertexFinderUnconstrained.Parameters {'Algorithms': ['PrimaryVertexFinder', 'BuildUpVertex'], 'BeamSizeX': ['40.E-6'], 'BeamSizeY': ['1.0E-6'], 'BeamSizeZ': ['44E-3'], 'BuildUpVertex.AVFTemperature': ['5.0'], 'BuildUpVertex.AssocIPTracks': ['1'], 'BuildUpVertex.AssocIPTracksChi2RatioSecToPri': ['2.0'], 'BuildUpVertex.AssocIPTracksMinDist': ['0.'], 'BuildUpVertex.MassThreshold': ['10.'], 'BuildUpVertex.MaxChi2ForDistOrder': ['1.0'], 'BuildUpVertex.MinDistFromIP': ['0.3'], 'BuildUpVertex.PrimaryChi2Threshold': ['25.'], 'BuildUpVertex.SecondaryChi2Threshold': ['9.'], 'BuildUpVertex.TrackMaxD0': ['10.'], 'BuildUpVertex.TrackMaxD0Err': ['0.1'], 'BuildUpVertex.TrackMaxZ0': ['20.'], 'BuildUpVertex.TrackMaxZ0Err': ['0.1'], 'BuildUpVertex.TrackMinFtdHits': ['1'], 'BuildUpVertex.TrackMinPt': ['0.1'], 'BuildUpVertex.TrackMinTpcHits': ['1'], 'BuildUpVertex.TrackMinTpcHitsMinPt': ['999999'], 'BuildUpVertex.TrackMinVxdFtdHits': ['1'], 'BuildUpVertex.TrackMinVxdHits': ['1'], 'BuildUpVertex.UseAVF': ['false'], 'BuildUpVertex.UseV0Selection': ['1'], 'BuildUpVertex.V0VertexCollectionName': ['BuildUpVertices_V0_res'], 'BuildUpVertexCollectionName': ['BuildUpVertices_res'], 'MCPCollection': ['MCParticle'], 'MCPFORelation': ['RecoMCTruthLink'], 'MagneticField': ['4.0'], 'PFOCollection': ['TightSelectedPandoraPFOs'], 'PrimaryVertexCollectionName': ['PrimaryVertices_res'], 'PrimaryVertexFinder.BeamspotConstraint': ['0'], 'PrimaryVertexFinder.BeamspotSmearing': ['false'], 'PrimaryVertexFinder.Chi2Threshold': ['25.'], 'PrimaryVertexFinder.TrackMaxD0': ['20.'], 'PrimaryVertexFinder.TrackMaxInnermostHitRadius': ['61'], 'PrimaryVertexFinder.TrackMaxZ0': ['20.'], 'PrimaryVertexFinder.TrackMinFtdHits': ['999999'], 'PrimaryVertexFinder.TrackMinTpcHits': ['999999'], 'PrimaryVertexFinder.TrackMinTpcHitsMinPt': ['999999'], 'PrimaryVertexFinder.TrackMinVtxFtdHits': ['1'], 'PrimaryVertexFinder.TrackMinVxdHits': ['999999'], 'PrintEventNumber': ['1'], 'ReadSubdetectorEnergies': ['0'], 'TrackHitOrdering': ['2'], 'UpdateVertexRPDaughters': ['0'], 'UseMCP': ['0']}
